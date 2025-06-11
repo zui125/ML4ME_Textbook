@@ -1,0 +1,19 @@
+# Preface {.unnumbered}
+
+This is a textbook to accompany my course notes for "Machine Learning for Mechanical Engineering" at ETH Zürich in the Department of Mechanical and Process Engineering (D-MAVT). 
+
+# Pre-Requisites
+This course was designed as an introductory course in Machine Learning (ML) focused on applications within Mechanical Engineering. However, it is also designed as follow on course from ETHZ's "Stochastics and Machine Learning" course which is required of all D-MAVT students, and therefore, I assume familiarity with the following topics that are already covered in that course:
+
+- TBD
+
+This book is also designed with several executable code sections that allow you to interactively experiment with the course materials using Python. For this, we have tried to keep the required packages as close as possible to the default Anacoda Package structure in Python 3.12, but will place any additional requirements in a requirements file to enable easy creation of Virtual Environments if you want to run the code in this book.
+
+# How This Book is Structured
+
+This book is designed to map to a one semester course at the advanced Undergraduate level (although early Masters students may still find it useful), and essentially features three parts:
+
+1. **Part 1: Foundational Skills** -- These chapters cover skills that cut across different ML approaches and that should serve you well in the future regardless of which models are "state-of-the-art" at the time. We will revisit these skills throughout the course, but I wanted to separate them into distinct chapters to (1) highlight/elevate their critical importance as independent skills worthy of your learning, and (2) enable a certain amount of depth and self-learning on these skills beyond what we can draw out during individual course modules or later chapters.
+2. **Part 2: Model-Specific Approaches** -- These chapters look more like a "traditional" textbook, in the sense that they cover individual techniques or concepts that I thought were maximally relevant to Mechanical Engineers at the time that I wrote the book. These chapters will be most immediately useful in terms of getting up to speed with specific types of models, but they are also the most likely to become out of date quickly as newer/better models are invented.
+3. **Part 3: Engineering-Specific Considerations** -- These chapters deal with issues that are particularly prevalent in Mechanical Engineering contexts and may cut across specific models mentioned in Part 2. These are likely to persist over time, even as new models or approaches are invented, although they will likely get easier to address as research fields expand.
+4. **Appendix: Useful Background Information** -- I will reserve the Appendix for useful background knowledge that either should have been covered in prior courses, or which is of an implementation nature beyond what is practical to include the earlier chapters. I anticipate that this part of the book will initially be very empty, but that I will add to it as needed over future course semesters.

@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "Machine Learning for Mechanical Engineering"
+  author: "Mark Fuge"
+  date: "6/11/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - looking_forward.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+
