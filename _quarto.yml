@@ -5,11 +5,35 @@ book:
   title: "Machine Learning for Mechanical Engineering"
   author: "Mark Fuge"
   date: "6/11/2025"
+  page-navigation: true
+  page-footer: "Copyright 2025, Mark Fuge" 
   chapters:
     - index.qmd
     - intro.qmd
+    - part: part1/part1.qmd
+      chapters: 
+        - part1/mapping_problems_to_models.qmd
+        - part1/evaluating_models.qmd
+        - part1/designing_experiments.qmd
+        - part1/taking_derivatives.qmd
+    - part: part2/part2.qmd
+      chapters: 
+        - part2/review_linear_models.qmd
+        - part2/review_NNs.qmd
+        - part2/regularization_NNs.qmd
+        - part2/failure_modes_NNs.qmd
+        - part2/generative_models_pushforward.qmd
+        - part2/generative_models_stochastic.qmd
+        - part2/failure_modes_probabilistic_models.qmd
+    - part: part3/part3.qmd
+      chapters: 
+        - part3/dealing_with_small_data.qmd
+        - part3/transfer_learning.qmd
     - looking_forward.qmd
     - references.qmd
+  appendices:
+    - appendices/helpful_tooling.qmd
+    - appendices/data_preparation.qmd
 
 bibliography: references.bib
 

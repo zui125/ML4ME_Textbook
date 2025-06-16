@@ -1,0 +1,9 @@
+# Failure Modes of Probabilistic Models
+
+## Sampling Difficulties
+
+## Mismatch in Porposal Distribution
+
+## Sample Auto-Correlation
+
+## Diagnostics

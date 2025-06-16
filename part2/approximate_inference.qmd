@@ -1,0 +1,13 @@
+# Approximate Inference
+
+## Marko-Chain Monte Carlo
+
+### Hamiltonian MCMC and Variants
+
+## Variational Inference
+
+### Simple Analytical Example
+
+### Black Box VI
+
+### Stochastic BBVI
