@@ -7,7 +7,7 @@ This is a textbook repository for my course notes for the ETHZ Machine Learning 
 I am using [Quarto](https://quarto.org/) for this book, and you can render the book using the following steps:
 
 1. Install [Quarto](https://quarto.org/docs/get-started/).
-2. Close this repository.
+2. Clone this repository.
 3. Preview the book via the command line (allows you to edit the book and see changes live):
 ```bash
 quarto preview
