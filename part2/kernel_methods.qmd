@@ -1,0 +1,14 @@
+# Kernel Methods
+
+## The Kernel Trick and Representer Theorem
+This should be a review from SML course
+
+## Kernalized Linear Regression
+This should be a review from SML course
+
+## Gaussian Processes
+
+### Effect of the Kernel on Function Regularization in GPs
+
+## Diagnosing Failure Modes in Kernel Methods
+

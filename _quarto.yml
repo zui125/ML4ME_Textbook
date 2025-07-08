@@ -24,7 +24,9 @@ book:
         - part2/failure_modes_NNs.qmd
         - part2/generative_models_pushforward.qmd
         - part2/generative_models_stochastic.qmd
+        - part2/probabilistic_models.qmd
         - part2/failure_modes_probabilistic_models.qmd
+        - part2/kernel_methods.qmd
     - part: part3/part3.qmd
       chapters: 
         - part3/dealing_with_small_data.qmd
@@ -34,6 +36,7 @@ book:
   appendices:
     - appendices/helpful_tooling.qmd
     - appendices/data_preparation.qmd
+    - appendices/course_progression.qmd
 
 bibliography: references.bib
 
@@ -45,5 +48,6 @@ format:
   pdf:
     documentclass: scrreprt
 
-
+editor:
+  render-on-save: true
 
