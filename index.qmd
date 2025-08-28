@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-This is a textbook to accompany my course notes for "Machine Learning for Mechanical Engineering" at ETH Zürich in the Department of Mechanical and Process Engineering (D-MAVT). 
+This is an open textbook to accompany my course notes for "Machine Learning for Mechanical Engineering" at ETH Zürich in the Department of Mechanical and Process Engineering (D-MAVT). 
 
 # Pre-Requisites
 This course was designed as an introductory course in Machine Learning (ML) focused on applications within Mechanical Engineering. However, it is also designed as follow on course from ETHZ's "Stochastics and Machine Learning" course which is required of all D-MAVT students, and therefore, I assume familiarity with the following topics that are already covered in that course:

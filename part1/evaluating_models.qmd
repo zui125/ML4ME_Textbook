@@ -2,3 +2,8 @@
 
 
 ## Diagnosing and Resolving Model Problems
+
+
+## Establishing Good Out-of-Sample Error Estimates
+
+Covers mainly Cross Validation. Optionally can include a discussion of the Bias/Variance Tradeoff, although this should have already been covered in the prior course.

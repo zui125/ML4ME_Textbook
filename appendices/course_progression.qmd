@@ -10,8 +10,8 @@ This section describes an example progression through the course material based 
     - Cross Validation
     - Plotting/Diagnostics of ML models
     - Defining Notation for Linear models and subsequent lectures
-- Example of how to use a Jupyter Notebook in class -- Linear Regression and Stochastic Gradient Descent
-- (Re-)Introduction to Coding and Tooling basics to help with the rest of the course, such as Editors, Colab, Version Control, Basic Debugging
+- Example of how to use a Jupyter Notebook in class -- [Review of Linear Regression](../part2/review_linear_models.qmd) and [Stochastic Gradient Descent](../part1/gradient_descent.qmd)
+- (Re-)Introduction to Coding and Tooling basics to help with the rest of the course, such as Editors, Colab, Version Control, Basic Debugging. Read [Helpful Tooling](../appendices/helpful_tooling.qmd).
 
 ### Lecture 2: Automatic Differentiation and Taking Derivatives
 - Read [Taking Derivatives](../part1/taking_derivatives.qmd)
@@ -25,4 +25,8 @@ This section describes an example progression through the course material based 
 
 ### Lecture 4: Review of Neural Network Models
 - Read [Review of Neural Networks](../part2/review_NNs.qmd)
-- In 
+- In-Class example of Visualizing NN Layers using [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
+- In-Class experiment with the Attention Mechanism
+- Read [Introduction to Transformers](../part2/transformers.qmd)
+
+- Overflow buffer for Implicit Differentiation if not covered in Lecture 2.

@@ -1,1 +1,29 @@
 # Regularization of Neural Networks
+
+## Why is Regularization Important and Useful?
+- Reducing tendency for overfitting
+- Inducing desired weight matrix properties (sparsity, Lipschitz constant, etc.)
+
+## Properties of Weight Matrices
+- Spectral properties, such as [Empirical Spectral Density (ESD)](https://arxiv.org/pdf/1710.09553)
+
+## Explicit Regularization
+That is, what happens when we explicitly add terms to a loss that promote certain types of regularization and inductive bias.
+
+Examples
+- L2 and L1 Regularization
+- Least Volume Regularization
+- Layer Normalization
+- Adding equation constraints (e.g., including ODE/PDE losses)
+
+## Implicit Regularization
+That is, what kind of regularization occurs when the choice of the architecture or other parameters implicitly impacts the solution toward certain classes of functions
+
+Examples
+- Skip Connections
+
+
+### Effect of Skip Connections
+
+## Visualizing Neural Network Loss surfaces
+

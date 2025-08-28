@@ -1,1 +1,7 @@
 # Review of Linear Models
+
+## Notation and setup under the Normal Equations
+
+## Revisiting the Loss Function under the lens of Gradient Descent
+
+## Adding Complexity to Lienar Models via Feature Expansion

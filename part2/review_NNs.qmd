@@ -1,1 +1,24 @@
 # Review of Neural Networks
+
+## Review of Notation and Basic Concepts
+
+
+## Review of Common Architectures
+
+### MLPs
+
+### CNNs
+
+### U-Nets
+
+### Recurrent Models
+
+
+## Review of the Attention Mechanism
+
+### Experiment using the Attention Mechanism
+
+### Example of Predicting CAD command sequences/autocomplete using Attention
+
+
+
