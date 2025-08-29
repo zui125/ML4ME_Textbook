@@ -4,6 +4,8 @@
 ## Diagnosing and Resolving Model Problems
 
 
-## Establishing Good Out-of-Sample Error Estimates
+## Establishing Good Out-of-Sample Error Estimates {#sec-cross-validation}
 
 Covers mainly Cross Validation. Optionally can include a discussion of the Bias/Variance Tradeoff, although this should have already been covered in the prior course.
+
+## Useful Plots and Diagnostics for ML Models {#sec-diagonstic-plots}
