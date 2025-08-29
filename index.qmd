@@ -38,3 +38,11 @@ Here is what a note with a collapsable block structure will look like. We will a
 ### Example Experiment
 Here is an example where we might pose an experiment or task for you to do on your own or in class. Often wrestling with these experiments is a good way to build intuitive understanding and integrate some of the material into practice. When you see this type of callout, you should pause and do the exercise at this point in the chapter, rather than reading ahead, as it may build intuition which is useful later in the chapter.
 :::
+
+
+# Contributors {#sec-contributors}
+
+I (Mark Fuge) originally created many of the foundational notebooks included in this book over around 8 years of teaching, mostly as separate Jupyter notebooks I used in my class, and which I now am compiling and extending here in a more coherent and organized form. At the request of others, I have decided to make this content open and extendable by others under a suitable license ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)). In addition, below I acknowledge the help and additions of others who have contributed elements to these notes:
+
+- TBD
+- TBD
