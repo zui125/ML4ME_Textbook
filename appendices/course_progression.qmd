@@ -7,9 +7,9 @@ This section describes an example progression through the course material based 
 ### Lecture 1: Course Introduction and Review of ML Basics
 - Overview the course structure and syllabus
 - Review several basics that should have been covered in the prior Stochastics and Machine Learning course
-    - Cross Validation
-    - Plotting/Diagnostics of ML models
-    - Defining Notation for Linear models and subsequent lectures
+    - @sec-cross-validation for a review of Cross Validation in [Evaluating ML Models](../part1/evaluating_models.qmd)
+    - @sec-diagonstic-plots for Plotting/Diagnostics of ML models in [Evaluating ML Models](../part1/evaluating_models.qmd)
+    - [Review of Linear models](../part2/review_linear_models.qmd)
 - Example of how to use a Jupyter Notebook in class -- [Review of Linear Regression](../part2/review_linear_models.qmd) and [Stochastic Gradient Descent](../part1/gradient_descent.qmd)
 - (Re-)Introduction to Coding and Tooling basics to help with the rest of the course, such as Editors, Colab, Version Control, Basic Debugging. Read [Helpful Tooling](../appendices/helpful_tooling.qmd).
 
@@ -28,5 +28,4 @@ This section describes an example progression through the course material based 
 - In-Class example of Visualizing NN Layers using [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
 - In-Class experiment with the Attention Mechanism
 - Read [Introduction to Transformers](../part2/transformers.qmd)
-
 - Overflow buffer for Implicit Differentiation if not covered in Lecture 2.

@@ -32,6 +32,9 @@ book:
       chapters: 
         - part3/dealing_with_small_data.qmd
         - part3/transfer_learning.qmd
+    - part: problems/problems.qmd
+      chapters: 
+        - problems/unsupervised_linear_models.ipynb
     - looking_forward.qmd
     - references.qmd
   appendices:

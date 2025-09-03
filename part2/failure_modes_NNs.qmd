@@ -1,4 +1,4 @@
-# Failure Modes in Neural Networks
+# Failure Modes of Neural Networks
 
 
 ## Diagnostics

@@ -8,4 +8,6 @@
 
 Covers mainly Cross Validation. Optionally can include a discussion of the Bias/Variance Tradeoff, although this should have already been covered in the prior course.
 
+{{< embed cross_validation_linear_regression.ipynb >}}
+
 ## Useful Plots and Diagnostics for ML Models {#sec-diagonstic-plots}
