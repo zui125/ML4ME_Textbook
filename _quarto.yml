@@ -17,6 +17,7 @@ book:
         - part1/designing_experiments.qmd
         - part1/taking_derivatives.qmd
         - part1/gradient_descent.qmd
+        - part1/measuring_distributions.qmd
     - part: part2/part2.qmd
       chapters: 
         - part2/review_linear_models.qmd

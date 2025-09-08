@@ -2,7 +2,8 @@
 
 This section describes an example progression through the course material based on my "Machine Learning for Mechanical Engineering" course at ETHZ. It assumes two lecture+exercise sessions twice a week, for a duration of 1 hour and 45 minutes each with a 5-10 minutes break in the middle of each session. This provides a sample of how you might work through the content in this book, and also acts as a reference to the students. My course is structured such that lectures and exercises occur in the same session, often alternating between lecture and in-class demonstrations or exercises, and this is frequently reflected in each of the book chapters. In class, for time reasons, I may skip some of the longer derivations in the book, since these can be effectively studied on their own.
 
-## Part 0: Review
+## Part 0: Review and Foundations
+These lectures introduce the course and also cover some background information that will be foundational and critical later in the course. For illustrative and notational purposes, we will use Linear Regression as a simple model to understand these foundations first, and this will allow us to build up to more complex models as we go through the course.
 
 ### Lecture 1: Course Introduction and Review of ML Basics
 - Overview the course structure and syllabus
@@ -14,18 +15,78 @@ This section describes an example progression through the course material based 
 - (Re-)Introduction to Coding and Tooling basics to help with the rest of the course, such as Editors, Colab, Version Control, Basic Debugging. Read [Helpful Tooling](../appendices/helpful_tooling.qmd).
 
 ### Lecture 2: Automatic Differentiation and Taking Derivatives
-- Read [Taking Derivatives](../part1/taking_derivatives.qmd)
+- Read [Taking Derivatives](../part1/taking_derivatives.qmd), except for Advanced topics like Implicit Differentiation and JVP/HVP (this is for a later lecture)
 - In-Class example of Forward and Reverse AD on a simple function
+- In-Class example of AD through a Verlet Integrator
+
+### Lecture 3: Review of (Stochastic) Gradient Descent
+- Read [Stochastic Gradient Descent](../part1/gradient_descent.qmd)
+- Read [Why Momentum Really Works](https://distill.pub/2017/momentum/)
+- Review of Regularization for Linear Regresson models, including weight decay (L2) and L1/sparsity control, and effects on loss functions.
+
+### Lecture 4: Advanced Differentiation
+- Read the remaining parts of [Taking Derivatives](../part1/taking_derivatives.qmd) 
 - In-Class example of Implicit Differentiation
 - In-Class example with JVPs for computing some example properties of Linear Models, for example, the Fisher Information Matrix.
+- (Time Permitting) Examples of Projected Gradient or Proximal Gradient methods.
 
-### Lecture 3: Review of Probabilistic Models
+## Part 1: Advanced Neural Network Models
+
+### Lecture 5: Review of Neural Network Models
+- Read [Review of Neural Networks](../part2/review_NNs.qmd)
+- In-Class example of Visualizing NN Layers using [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
+- In-Class examples of Auto-Encoders on Simple Data, Auto-Encoders on Airfoil Data, and Least Volume Auto-Encoders (including Spectral Normalization)
+
+### Lecture 6:
+- Read [Introduction to Transformers](../part2/transformers.qmd)
+- In-Class experiment with the Attention Mechanism
+
+### Lecture 7: Interlude -- Techniques for Building and Debugging ML Models
+- Read [Helpful Tooling for Working with and Debugging Machine Learning Models](../appendices/helpful_tooling.qmd)
+- In-Class Before and After example implementing the changes
+- In-Class example of improving/correcting an LLM-provided code solution
+
+### Lecture 8: Push-Forward Generative Models
+- Read [Push-Forward Generative Models](../part2/generative_models_pushforward.qmd)
+- In-Class examples of GANs, VAEs, and Normalizing Flows on Synthetic Data and the Airfoil Problem
+
+### Lecture 9: Optimal Transport
+- Read [Measuring Differences Between Distributions](../part1/measuring_distributions.qmd)
+- In-Class example of an Optimal Transport Generative Model
+
+### Lecture 10: Stochastic Generative Models
+- Read [Stochastic Generative Models](../part2/generative_models_stochastic.qmd)
+- In-Class examples of Diffusion Models on Synthetic Data and the Airfoil Problem
+- In-Class examples of Sequence Data generation (e.g., the Tangrams Example)
+
+### Lecture 11: Latent Generative Neural Models
+- In-Class example of Latent Diffusion Models via Least Volume AEs.
+- In-Class example of continuous+discrete models
+- Practical Demonstrations of complex models on EngiBench
+
+### Lecture 12: Review of Reinforcement Learning
+- Read [Reinforcement Learning](../part2/reinforcement_learning.qmd)
+- In-Class example of Linear Functional Q-Learning
+
+### Lecture 13: Actor-Critic and Policy Gradient Methods
+
+### Lecture 14: Advanced Policy Methods
+- Diffusion Policies
+- Transformer Policies
+- Latent Generative Policies (e.g., Dreamer and variants)
+
+### Lecture 15: Message Passing, Graph Neural Networks, and other Structured Data
+- Read [Graph Neural Networks](../part2/graph_neural_networks.qmd)
+- Learning with Meshes and Point Clouds
+- Learning with Signed Distance Fields
+
+## Part 2: Probabilistic Models and Kernels
+
+### Lecture 16: Review of Probabilistic Models
 - Read @sec-reviewprobability of [Probabilistic Models](../part2/probabilistic_models.qmd), since this reviews the information from the prior course. We will revisit the later sections in a later lecture.
 - In-Class exercise deriving the MLE for various common distributions
 
-### Lecture 4: Review of Neural Network Models
-- Read [Review of Neural Networks](../part2/review_NNs.qmd)
-- In-Class example of Visualizing NN Layers using [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
-- In-Class experiment with the Attention Mechanism
-- Read [Introduction to Transformers](../part2/transformers.qmd)
-- Overflow buffer for Implicit Differentiation if not covered in Lecture 2.
+### Lecture 17: Introduction to Probablistic Programming
+- Bayesian Linear Regression in a Probabilistic Programming Language
+- Introduction to Approximate Inference Methods, such as MCMC and Variational Inference
+
