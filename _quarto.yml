@@ -34,7 +34,7 @@ book:
         - part3/transfer_learning.qmd
     - part: problems/problems.qmd
       chapters: 
-        - problems/unsupervised_linear_models.ipynb
+        - problems/ps1.qmd
     - looking_forward.qmd
     - references.qmd
   appendices:
