@@ -44,5 +44,5 @@ Here is an example where we might pose an experiment or task for you to do on yo
 
 I (Mark Fuge) originally created many of the foundational notebooks included in this book over around 8 years of teaching, mostly as separate Jupyter notebooks I used in my class, and which I now am compiling and extending here in a more coherent and organized form. At the request of others, I have decided to make this content open and extendable by others under a suitable license ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)). In addition, below I acknowledge the help and additions of others who have contributed elements to these notes:
 
-- TBD
-- TBD
+- Matthew Keeler: Helped reformat many of my existing notebooks into a format that made this online version possible.
+- Dr. Florian Felten: Created @sec-helpful-tooling.
