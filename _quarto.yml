@@ -15,7 +15,6 @@ book:
       chapters: 
         - part1/mapping_problems_to_models.qmd
         - part1/evaluating_models.qmd
-        - part1/designing_experiments.qmd
         - part1/taking_derivatives.qmd
         - part1/gradient_descent.qmd
         - part1/measuring_distributions.qmd
@@ -34,11 +33,18 @@ book:
       chapters: 
         - part3/dealing_with_small_data.qmd
         - part3/transfer_learning.qmd
+    - looking_forward.qmd
+    - references.qmd
     - part: problems/problems.qmd
       chapters: 
         - problems/ps1.qmd
-    - looking_forward.qmd
-    - references.qmd
+    - part: notebooks/notebooks.qmd
+      number-sections: false
+      chapters:
+        - notebooks/california_housing_visualization.ipynb
+        - notebooks/supervised_linear_models.ipynb
+        - notebooks/pytorch_autograd_verlet_integrator.ipynb
+    
   appendices:
     - appendices/helpful_tooling.qmd
     - appendices/data_preparation.qmd

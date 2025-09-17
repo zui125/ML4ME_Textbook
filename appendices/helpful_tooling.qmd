@@ -1,4 +1,4 @@
-# Helpful Tooling for Working with and Debugging Machine Learning Models
+# Helpful Tooling for Working with and Debugging Machine Learning Models {#sec-helpful-tooling}
 
 Machine learning projects are notoriously brittle: minor implementation details can cause major differences in outcomes. Good practices and tools make your implementation **reproducible** (and thus **debuggable**), and **portable** across different hardware environments, such as a teammate's laptop or a high-performance computing (HPC) system.
 
