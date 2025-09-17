@@ -3,9 +3,7 @@
 This is an open textbook to accompany my course notes for "Machine Learning for Mechanical Engineering" at ETH Zürich in the Department of Mechanical and Process Engineering (D-MAVT). 
 
 # Pre-Requisites
-This course was designed as an introductory course in Machine Learning (ML) focused on applications within Mechanical Engineering. However, it is also designed as follow on course from ETHZ's "Stochastics and Machine Learning" course which is required of all D-MAVT students, and therefore, I assume familiarity with the following topics that are already covered in that course:
-
-- TBD
+This course was designed as an introductory course in Machine Learning (ML) focused on applications within Mechanical Engineering. However, it is also designed as follow on course from ETHZ's "Stochastics and Machine Learning" course which is required of all D-MAVT students, and therefore, I assume familiarity with the topics covered in that course.
 
 This book is also designed with several executable code sections that allow you to interactively experiment with the course materials using Python. For this, we have tried to keep the required packages as close as possible to the default Anacoda Package structure in Python 3.12, but will place any additional requirements in a requirements file to enable easy creation of Virtual Environments if you want to run the code in this book.
 

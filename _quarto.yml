@@ -5,7 +5,7 @@ project:
 book:
   title: "Machine Learning for Mechanical Engineering"
   author: "Mark Fuge"
-  date: "Sept. 17th, 2025"
+  date: "09/17/2025"
   page-navigation: true
   page-footer: "Machine Learning for Mechanical Engineers © 2025 by [Mark Fuge and IDEAL Lab Contributors](./index.qmd#sec-contributors) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
   #downloads: [pdf]
@@ -60,7 +60,7 @@ format:
       - brand
   #pdf:
   #  documentclass: scrreprt
-
+format-links: [ipynb]
 editor:
   render-on-save: true
 
