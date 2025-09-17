@@ -3,8 +3,8 @@
 ## Notation and setup under the Normal Equations
 
 ## Revisiting the Loss Function under the lens of Gradient Descent
-{{< embed supervised_linear_models.ipynb echo=True >}}
+{{< embed ../notebooks/supervised_linear_models.ipynb echo=True >}}
 
 ## Adding Complexity to Lienar Models via Feature Expansion
-{{< embed polynomial_regression.ipynb echo=True >}}
+{{< embed ../notebooks/polynomial_regression.ipynb echo=True >}}
 
