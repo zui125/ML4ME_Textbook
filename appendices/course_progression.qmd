@@ -11,8 +11,6 @@ These lectures introduce the course and also cover some background information t
     - Visualizing Data Review using the [California Housing Dataset Notebook](../notebooks/california_housing_visualization.ipynb)
     - Review of Cross Validation in [Evaluating ML Models](../part1/evaluating_models.qmd)
     - [Review of Linear models](../part2/review_linear_models.qmd)
-    
-- Example of how to use a Jupyter Notebook in class -- [Review of Linear Regression](../part2/review_linear_models.qmd) and [Stochastic Gradient Descent](../part1/gradient_descent.qmd)
 - (Re-)Introduction to Coding and Tooling basics to help with the rest of the course, such as Editors, Colab, Version Control, Basic Debugging. Read [Helpful Tooling](../appendices/helpful_tooling.qmd).
 
 ### Lecture 2: Review of (Stochastic) Gradient Descent
