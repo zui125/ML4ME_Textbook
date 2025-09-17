@@ -1,0 +1,9 @@
+# Measuring Differences Between Distributions
+
+## KL-Divergence
+
+## Maximum Mean Discrepancy
+
+## Information Geometry
+
+## Optimal Transport

@@ -1,0 +1,12 @@
+# Gradient Descent {#sec-gradient-descent}
+
+## Introduction to Gradient Descent
+
+## Stochastic Gradient Descent
+
+## Understanding Momentum in Gradient Descent
+
+## Variants of Gradient Descent Algorithms
+
+## Issues that can arise when using Gradient Descent
+

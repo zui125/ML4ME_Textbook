@@ -1,0 +1,23 @@
+# Probabilistic Models
+
+## Review of Probability and Inference {#sec-reviewprobability}
+This material should have been covered in Stochastics and Machine Learning, so this is largely a review.
+
+### Joint/Conditional Probability and Bayes Rule
+
+### Maximum Likelihood Estimation
+
+### Maximum Aposteriori Estimation
+
+### Example: Bayesian Linear Regression
+
+
+## Introduction to Probabilistics Graphical Models
+
+## Approximate Inference
+
+## The Exponential Family
+
+## Exercises
+
+### Derving the MLE for Various Common Distributions
