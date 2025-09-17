@@ -4,36 +4,36 @@ project:
 book:
   title: "Machine Learning for Mechanical Engineering"
   author: "Mark Fuge"
-  date: "6/11/2025"
+  date: "Sept. 17th, 2025"
   page-navigation: true
   page-footer: "Machine Learning for Mechanical Engineers © 2025 by [Mark Fuge and IDEAL Lab Contributors](./index.qmd#sec-contributors) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
-  downloads: [pdf]
+  #downloads: [pdf]
   chapters:
     - index.qmd
     - intro.qmd
     - part: part1/part1.qmd
-      chapters: 
-        - part1/mapping_problems_to_models.qmd
+      chapters:
         - part1/evaluating_models.qmd
+        #- part1/gradient_descent.qmd
+        - notebooks/supervised_linear_models.ipynb
         - part1/taking_derivatives.qmd
-        - part1/gradient_descent.qmd
-        - part1/measuring_distributions.qmd
-    - part: part2/part2.qmd
-      chapters: 
-        - part2/review_linear_models.qmd
-        - part2/review_NNs.qmd
-        - part2/regularization_NNs.qmd
-        - part2/failure_modes_NNs.qmd
-        - part2/generative_models_pushforward.qmd
-        - part2/generative_models_stochastic.qmd
-        - part2/probabilistic_models.qmd
-        - part2/failure_modes_probabilistic_models.qmd
-        - part2/kernel_methods.qmd
-    - part: part3/part3.qmd
-      chapters: 
-        - part3/dealing_with_small_data.qmd
-        - part3/transfer_learning.qmd
-    - looking_forward.qmd
+        #- part1/measuring_distributions.qmd
+    #- part: part2/part2.qmd
+    #  chapters: 
+        #- part2/review_linear_models.qmd
+        #- part2/review_NNs.qmd
+        #- part2/regularization_NNs.qmd
+        #- part2/failure_modes_NNs.qmd
+        #- part2/generative_models_pushforward.qmd
+        #- part2/generative_models_stochastic.qmd
+        #- part2/probabilistic_models.qmd
+        #- part2/failure_modes_probabilistic_models.qmd
+        #- part2/kernel_methods.qmd
+    #- part: part3/part3.qmd
+    #  chapters: 
+        #- part3/dealing_with_small_data.qmd
+        #- part3/transfer_learning.qmd
+    #- looking_forward.qmd
     - references.qmd
     - part: problems/problems.qmd
       chapters: 
@@ -47,7 +47,7 @@ book:
     
   appendices:
     - appendices/helpful_tooling.qmd
-    - appendices/data_preparation.qmd
+    #- appendices/data_preparation.qmd
     - appendices/course_progression.qmd
 
 bibliography: references.bib

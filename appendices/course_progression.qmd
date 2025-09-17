@@ -8,8 +8,8 @@ These lectures introduce the course and also cover some background information t
 ### Lecture 1: Course Introduction and Review of ML Basics
 - Overview the course structure and syllabus
 - Review several basics that should have been covered in the prior Stochastics and Machine Learning course
-    - Visualizing Data Review using the California Housing Dataset Notebook
-    - @sec-cross-validation for a review of Cross Validation in [Evaluating ML Models](../part1/evaluating_models.qmd)
+    - Visualizing Data Review using the [California Housing Dataset Notebook](../notebooks/california_housing_visualization.ipynb)
+    - Review of Cross Validation in [Evaluating ML Models](../part1/evaluating_models.qmd)
     - [Review of Linear models](../part2/review_linear_models.qmd)
     
 - Example of how to use a Jupyter Notebook in class -- [Review of Linear Regression](../part2/review_linear_models.qmd) and [Stochastic Gradient Descent](../part1/gradient_descent.qmd)
