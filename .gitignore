@@ -1,3 +1,18 @@
+# Quarto build artifacts
+/.quarto/
+/_book/
+/_site/
+*_files/
+
+# LaTeX compilation files
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+index.pdf
+*.pkz%
+
 # Python
 __pycache__/
 *.py[cod]
