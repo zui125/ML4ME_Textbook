@@ -71,7 +71,7 @@ The setup script automatically:
 
 ### 🎯 How to Start Learning
 
-#### Option 1: Run Interactive Notebooks in VS Code (Recommended)
+#### Run Interactive Notebooks in VS Code
 VS Code provides an integrated development environment with excellent Jupyter support and is the recommended approach for this course.
 
 1. **Open VS Code**
