@@ -4,11 +4,11 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
 
 ---
 
-## 🎓 For Students: Quick Setup
+## For Students: Setup Guide
 
-> **Welcome!** This guide will get you from zero to running machine learning models in just a few steps. No prior Python experience needed!
+This guide provides step-by-step instructions to set up the machine learning environment required for this course. No prior Python experience is required.
 
-### 🚀 Quick Start (4 Steps)
+### Quick Start (4 Steps)
 
 #### Step 1: Create GitHub Account
 **You need a GitHub account to download this book:**
@@ -57,22 +57,22 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
    - **Windows:** Type `setup.bat` in Miniforge Prompt
    - **Mac/Linux:** Type `./setup.sh` in terminal
 
-4. **Wait 5-10 minutes** (it's downloading lots of software)
+4. **Wait 5-10 minutes** (the script downloads and installs required software)
 
-5. **You're done!** 🎉
+5. **Setup complete**
 
-### 🎯 What Just Happened?
+### What the Setup Script Does
 
 The setup script automatically:
-- ✅ Created a Python environment called `ml4me-student`
-- ✅ Installed PyTorch (for deep learning) with proper CUDA support
-- ✅ Installed all ML libraries from the project dependencies (NumPy, Matplotlib, Pandas, Scikit-learn, Jupyter, etc.)
-- ✅ Set up everything needed to run the interactive notebooks
+- Created a Python environment called `ml4me-student`
+- Installed PyTorch (for deep learning) with proper CUDA support
+- Installed all ML libraries from the project dependencies (NumPy, Matplotlib, Pandas, Scikit-learn, Jupyter, etc.)
+- Set up everything needed to run the interactive notebooks
 
-### 🚀 How to Start Learning
+### How to Start Learning
 
 #### Option 1: Run Interactive Notebooks in VS Code (Recommended)
-**VS Code is the best way to learn with this book!** It provides an integrated development environment with excellent Jupyter support.
+VS Code provides an integrated development environment with excellent Jupyter support and is the recommended approach for this course.
 
 1. **Open VS Code**
 2. **Open the book folder**
@@ -80,13 +80,13 @@ The setup script automatically:
 4. **VS Code will ask you to select a kernel - choose "ml4me-student"**
 5. **Start coding!** The notebook will run directly in VS Code
 
-**Why VS Code is great for ML:**
-- ✅ **Integrated experience** - no switching between browser and terminal
-- ✅ **Smart autocomplete** and IntelliSense for Python
-- ✅ **Built-in debugging** tools for troubleshooting
-- ✅ **Git integration** for version control
-- ✅ **Extension ecosystem** for ML/AI development
-- ✅ **Integrated terminal** for running commands
+**Advantages of VS Code for ML development:**
+- **Integrated experience** - no switching between browser and terminal
+- **Smart autocomplete** and IntelliSense for Python
+- **Built-in debugging** tools for troubleshooting
+- **Git integration** for version control
+- **Extension ecosystem** for ML/AI development
+- **Integrated terminal** for running commands
 
 #### Option 2: Read the Book Online
 1. **Open VS Code**
@@ -95,7 +95,7 @@ The setup script automatically:
 4. **Click "Preview"** in the top-right corner
 
 
-### 🔧 Daily Workflow
+### Daily Workflow
 
 **Every time you want to work on this book:**
 
@@ -110,7 +110,7 @@ The setup script automatically:
 - Just close VS Code or the notebook file - that's it!
 
 
-### 🆘 Troubleshooting
+### Troubleshooting
 
 #### "Conda not found"
 - **Solution:** Install Miniforge from [miniforge.io](https://github.com/conda-forge/miniforge)
@@ -142,46 +142,46 @@ The setup script automatically:
 #### GitHub: "Authentication failed" when cloning
 - **Solution:** Make sure you created a GitHub account and verified your email
 
-### 📚 What's in This Book?
+### Course Content
 
-#### 📖 **Interactive Textbook**
+#### Interactive Textbook
 - **Part 1:** Foundational Skills (evaluating models, taking derivatives)
 - **Part 2:** Model-Specific Approaches (neural networks, probabilistic models)
 - **Part 3:** Engineering-Specific Considerations
 
-#### 🧪 **Interactive Notebooks**
-- **California Housing Visualization** - Learn data visualization
-- **Linear Regression** - Understand basic ML
-- **PyTorch Autograd** - Learn automatic differentiation
-- **Polynomial Regression** - Explore model complexity
-- **Cross Validation** - Learn proper model evaluation
+#### Interactive Notebooks
+- **California Housing Visualization** - Data visualization fundamentals
+- **Linear Regression** - Introduction to machine learning
+- **PyTorch Autograd** - Automatic differentiation
+- **Polynomial Regression** - Model complexity analysis
+- **Cross Validation** - Model evaluation techniques
 
-#### 📝 **Problem Sets**
-- **PS1:** Hands-on exercises to practice what you learn
+#### Problem Sets
+- **PS1:** Hands-on exercises to practice course concepts
 
-### 🎓 Learning Path
+### Suggested Learning Path
 
-#### **Week 1: Basics**
+#### Week 1: Fundamentals
 1. **Read:** Introduction and Part 1 overview
-2. **Do:** California Housing Visualization notebook
+2. **Complete:** California Housing Visualization notebook
 3. **Practice:** PS1 Part 1
 
-#### **Week 2: Linear Models**
+#### Week 2: Linear Models
 1. **Read:** Linear regression chapters
-2. **Do:** Linear models and cross-validation notebooks
+2. **Complete:** Linear models and cross-validation notebooks
 3. **Practice:** PS1 Part 2
 
-#### **Week 3: Advanced Topics**
+#### Week 3: Advanced Topics
 1. **Read:** PyTorch and automatic differentiation
-2. **Do:** PyTorch notebook
+2. **Complete:** PyTorch notebook
 3. **Practice:** PS1 Part 3
 
-#### **Week 4: Deep Dive**
+#### Week 4: Advanced Applications
 1. **Read:** Part 2 chapters
-2. **Do:** Advanced notebooks
-3. **Explore:** Your own projects!
+2. **Complete:** Advanced notebooks
+3. **Explore:** Independent projects
 
-### 🔗 Useful Commands Cheat Sheet
+### Useful Commands
 
 | What you want to do | Command |
 |---------------------|---------|
@@ -191,19 +191,19 @@ The setup script automatically:
 | List installed packages | `pip list` |
 | Update a package | `pip install --upgrade package_name` |
 
-### 🆘 Getting Help
+### Getting Help
 
-#### **If you're stuck:**
-1. **Check this guide first** - most problems are covered here
-2. **Ask your classmates** - they might have the same issue
-3. **Ask your instructor** - they're here to help!
+#### If you encounter issues:
+1. **Check this guide first** - most common problems are covered here
+2. **Ask your classmates** - they may have encountered the same issue
+3. **Contact your instructor** for additional support
 
-#### **Common Issues:**
+#### Common Issues:
 - **"Module not found"** → Make sure you selected the "ml4me-student" kernel in VS Code
 
 ---
 
-## 👨‍🏫 For Instructors: Compiling the Book
+## For Instructors: Compiling the Book
 
 I am using [Quarto](https://quarto.org/) for this book, and you can render the book using the following steps:
 
@@ -224,16 +224,14 @@ quarto render --to pdf
 
 ---
 
-## 🎉 You're Ready!
+## Setup Complete
 
-**Congratulations!** You now have a complete machine learning environment set up. You can:
+You now have a complete machine learning environment set up. You can:
 
-- ✅ Read the interactive textbook
-- ✅ Run all the example notebooks
-- ✅ Complete the problem sets
-- ✅ Start your own ML projects
-
-**Happy learning!** 🚀
+- Read the interactive textbook
+- Run all the example notebooks
+- Complete the problem sets
+- Start your own ML projects
 
 ---
 
