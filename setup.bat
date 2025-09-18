@@ -29,16 +29,7 @@ echo 📦 Installing PyTorch with CUDA support...
 pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 
 echo 📚 Installing ML and Data Science libraries...
-pip install numpy==1.26.4
-pip install matplotlib==3.8.4
-pip install seaborn==0.13.2
-pip install scikit-learn==1.4.2
-pip install pandas==2.2.2
-pip install scipy==1.13.1
-pip install jupyter==1.0.0
-pip install notebook==7.1.2
-pip install ipywidgets==8.1.2
-pip install Pillow==10.3.0
+pip install .
 
 echo 🧪 Testing the setup...
 python -c "import torch; print(f'✅ PyTorch {torch.__version__} installed successfully')"

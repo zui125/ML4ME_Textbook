@@ -55,10 +55,9 @@
 
 The setup script automatically:
 - ✅ Created a Python environment called `ml4me-student`
-- ✅ Installed PyTorch (for deep learning)
-- ✅ Installed NumPy, Matplotlib, Pandas (for data science)
-- ✅ Installed Scikit-learn (for machine learning)
-- ✅ Installed Jupyter (for interactive notebooks)
+- ✅ Installed PyTorch (for deep learning) with proper CUDA support
+- ✅ Installed all ML libraries from the project dependencies (NumPy, Matplotlib, Pandas, Scikit-learn, Jupyter, etc.)
+- ✅ Set up everything needed to run the interactive notebooks
 
 ---
 
