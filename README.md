@@ -159,27 +159,6 @@ VS Code provides an integrated development environment with excellent Jupyter su
 #### Problem Sets
 - **PS1:** Hands-on exercises to practice course concepts
 
-### 🎓 Suggested Learning Path
-
-#### Week 1: Fundamentals
-1. **Read:** Introduction and Part 1 overview
-2. **Complete:** California Housing Visualization notebook
-3. **Practice:** PS1 Part 1
-
-#### Week 2: Linear Models
-1. **Read:** Linear regression chapters
-2. **Complete:** Linear models and cross-validation notebooks
-3. **Practice:** PS1 Part 2
-
-#### Week 3: Advanced Topics
-1. **Read:** PyTorch and automatic differentiation
-2. **Complete:** PyTorch notebook
-3. **Practice:** PS1 Part 3
-
-#### Week 4: Advanced Applications
-1. **Read:** Part 2 chapters
-2. **Complete:** Advanced notebooks
-3. **Explore:** Independent projects
 
 ### 🔗 Useful Commands
 
