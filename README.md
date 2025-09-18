@@ -71,6 +71,9 @@ The setup script automatically:
 
 ### 🎯 How to Start Learning
 
+#### Read the Textbook Online
+The complete textbook is available online at: **https://ideal.umd.edu/ML4ME_Textbook/**
+
 #### Run Interactive Notebooks in VS Code
 VS Code provides an integrated development environment with excellent Jupyter support and is the recommended approach for this course.
 
