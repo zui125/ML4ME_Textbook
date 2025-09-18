@@ -88,11 +88,6 @@ VS Code provides an integrated development environment with excellent Jupyter su
 - **Extension ecosystem** for ML/AI development
 - **Integrated terminal** for running commands
 
-#### Option 2: Read the Book Online
-1. **Open VS Code**
-2. **Open the book folder**
-3. **Double-click `index.qmd`**
-4. **Click "Preview"** in the top-right corner
 
 
 ### 🔧 Daily Workflow
