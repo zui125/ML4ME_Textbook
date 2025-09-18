@@ -8,9 +8,17 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
 
 > **Welcome!** This guide will get you from zero to running machine learning models in just a few steps. No prior Python experience needed!
 
-### 🚀 Quick Start (3 Steps)
+### 🚀 Quick Start (4 Steps)
 
-#### Step 1: Install Prerequisites
+#### Step 1: Create GitHub Account
+**You need a GitHub account to download this book:**
+
+1. **Go to [github.com](https://github.com)**
+2. **Click "Sign up"**
+3. **Create your account** (use your ETH email if you have one)
+4. **Verify your email**
+
+#### Step 2: Install Prerequisites
 **You need these 2 things:**
 
 1. **Miniforge** (Python package manager)
@@ -22,7 +30,7 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
    - Download from [code.visualstudio.com](https://code.visualstudio.com/)
    - Install it (just click through the installer)
 
-#### Step 2: Get This Book
+#### Step 3: Get This Book
 **Copy this book to your computer:**
 
 1. **Open VS Code**
@@ -32,11 +40,11 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
 5. **Choose a folder** (like Desktop or Documents)
 6. **Wait for it to download**
 
-#### Step 3: Run the Auto-Setup
+#### Step 4: Run the Auto-Setup
 **This installs everything automatically:**
 
 1. **Open Terminal/Command Prompt:**
-   - **Windows:** Press `Win+R`, type `cmd`, press Enter
+   - **Windows:** Open "Miniforge Prompt" from Start Menu (NOT regular Command Prompt!)
    - **Mac:** Press `Cmd+Space`, type "Terminal", press Enter
    - **Linux:** Press `Ctrl+Alt+T`
 
@@ -46,7 +54,7 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
    ```
 
 3. **Run the setup script:**
-   - **Windows:** Double-click `setup.bat` OR type `setup.bat` in terminal
+   - **Windows:** Type `setup.bat` in Miniforge Prompt
    - **Mac/Linux:** Type `./setup.sh` in terminal
 
 4. **Wait 5-10 minutes** (it's downloading lots of software)
@@ -69,8 +77,17 @@ The setup script automatically:
 3. **Double-click `index.qmd`**
 4. **Click "Preview"** in the top-right corner
 
-#### Option 2: Run Interactive Notebooks
-1. **Open Terminal/Command Prompt**
+#### Option 2: Run Interactive Notebooks in VS Code (Recommended)
+1. **Open VS Code**
+2. **Open the book folder**
+3. **Click on any `.ipynb` file in the `notebooks` folder**
+4. **VS Code will ask you to select a kernel - choose "ml4me-student"**
+5. **Start coding!** The notebook will run in VS Code
+
+#### Option 3: Run Interactive Notebooks in Browser
+1. **Open Terminal/Command Prompt:**
+   - **Windows:** Open "Miniforge Prompt" from Start Menu
+   - **Mac/Linux:** Open Terminal
 2. **Type these commands:**
    ```bash
    conda activate ml4me-student
@@ -83,7 +100,17 @@ The setup script automatically:
 
 **Every time you want to work on this book:**
 
-1. **Open Terminal/Command Prompt**
+#### If using VS Code (Recommended):
+1. **Open VS Code**
+2. **Open the book folder**
+3. **Click on any `.ipynb` file**
+4. **Select "ml4me-student" kernel when prompted**
+5. **Start coding!**
+
+#### If using Jupyter in browser:
+1. **Open Terminal/Command Prompt:**
+   - **Windows:** Open "Miniforge Prompt" from Start Menu
+   - **Mac/Linux:** Open Terminal
 2. **Navigate to the book:**
    ```bash
    cd ML4ME_Textbook
@@ -98,9 +125,8 @@ The setup script automatically:
    ```
 
 **When you're done:**
-- **Close the browser tab**
-- **Press `Ctrl+C` twice in the terminal**
-- **Type `conda deactivate`**
+- **VS Code:** Just close the file
+- **Browser:** Close the browser tab, press `Ctrl+C` twice in terminal, type `conda deactivate`
 
 ### 🆘 Troubleshooting
 
@@ -122,6 +148,19 @@ The setup script automatically:
   1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
   2. Type "Python: Select Interpreter"
   3. Choose the one with `ml4me-student`
+
+#### VS Code can't find the conda kernel
+- **Solution:**
+  1. Open a `.ipynb` file in VS Code
+  2. Click on the kernel name in the top-right corner
+  3. Select "ml4me-student" from the list
+  4. If not listed, select "Select Another Kernel" → "Python Environments" → "ml4me-student"
+
+#### Windows: "conda command not found" in regular Command Prompt
+- **Solution:** Always use "Miniforge Prompt" from Start Menu, NOT regular Command Prompt
+
+#### GitHub: "Authentication failed" when cloning
+- **Solution:** Make sure you created a GitHub account and verified your email
 
 ### 📚 What's in This Book?
 
