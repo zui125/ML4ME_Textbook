@@ -22,11 +22,18 @@ echo 🖥️  Detected OS: Windows
 REM Check for NVIDIA GPU
 nvidia-smi >nul 2>&1
 if %errorlevel% equ 0 (
-    echo 🎮 NVIDIA GPU detected
+    echo 🎮 NVIDIA GPU detected via nvidia-smi
     set HAS_NVIDIA_GPU=true
 ) else (
-    echo 💻 No NVIDIA GPU detected, using CPU-only PyTorch
-    set HAS_NVIDIA_GPU=false
+    REM Fallback: check for NVIDIA in device manager
+    wmic path win32_VideoController get name | findstr /i nvidia >nul 2>&1
+    if %errorlevel% equ 0 (
+        echo 🎮 NVIDIA GPU detected via device manager
+        set HAS_NVIDIA_GPU=true
+    ) else (
+        echo 💻 No NVIDIA GPU detected, using CPU-only PyTorch
+        set HAS_NVIDIA_GPU=false
+    )
 )
 
 REM Choose environment file based on GPU availability

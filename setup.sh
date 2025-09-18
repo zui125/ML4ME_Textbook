@@ -19,12 +19,21 @@ echo "✅ Conda found"
 
 # Detect OS
 OS="unknown"
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]] || [[ "$OSTYPE" == "linux-musl"* ]]; then
     OS="linux"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     OS="macos"
-elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]]; then
+elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "win32" ]]; then
     OS="windows"
+else
+    # Fallback: try to detect from uname
+    case "$(uname -s)" in
+        Linux*)     OS="linux";;
+        Darwin*)    OS="macos";;
+        CYGWIN*)    OS="windows";;
+        MINGW*)     OS="windows";;
+        *)          OS="unknown";;
+    esac
 fi
 
 echo "🖥️  Detected OS: $OS"
@@ -32,8 +41,12 @@ echo "🖥️  Detected OS: $OS"
 # Check for NVIDIA GPU on Linux/Windows
 HAS_NVIDIA_GPU=false
 if [[ "$OS" == "linux" ]] || [[ "$OS" == "windows" ]]; then
-    if command -v nvidia-smi &> /dev/null; then
-        echo "🎮 NVIDIA GPU detected"
+    # Try multiple ways to detect NVIDIA GPU
+    if command -v nvidia-smi &> /dev/null && nvidia-smi &> /dev/null; then
+        echo "🎮 NVIDIA GPU detected via nvidia-smi"
+        HAS_NVIDIA_GPU=true
+    elif command -v lspci &> /dev/null && lspci | grep -i nvidia &> /dev/null; then
+        echo "🎮 NVIDIA GPU detected via lspci"
         HAS_NVIDIA_GPU=true
     else
         echo "💻 No NVIDIA GPU detected, using CPU-only PyTorch"
