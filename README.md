@@ -4,11 +4,11 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
 
 ---
 
-## For Students: Setup Guide
+## 📚 For Students: Setup Guide
 
 This guide provides step-by-step instructions to set up the machine learning environment required for this course. No prior Python experience is required.
 
-### Quick Start (4 Steps)
+### 🚀 Quick Start (4 Steps)
 
 #### Step 1: Create GitHub Account
 **You need a GitHub account to download this book:**
@@ -22,8 +22,8 @@ This guide provides step-by-step instructions to set up the machine learning env
 **You need these 2 things:**
 
 1. **Miniforge** (Python package manager)
-   - **macOS/Linux:** Download from [miniforge.io](https://github.com/conda-forge/miniforge)
-   - **Windows:** Download from [miniforge.io](https://github.com/conda-forge/miniforge)
+   - Download from the official [conda-forge website](https://conda-forge.org/download/)
+   - Choose the appropriate installer for your operating system
    - Install it (just click through the installer)
 
 2. **VS Code** (code editor)
@@ -61,15 +61,15 @@ This guide provides step-by-step instructions to set up the machine learning env
 
 5. **Setup complete**
 
-### What the Setup Script Does
+### ✅ What the Setup Script Does
 
 The setup script automatically:
-- Created a Python environment called `ml4me-student`
-- Installed PyTorch (for deep learning) with proper CUDA support
-- Installed all ML libraries from the project dependencies (NumPy, Matplotlib, Pandas, Scikit-learn, Jupyter, etc.)
-- Set up everything needed to run the interactive notebooks
+- ✅ Created a Python environment called `ml4me-student`
+- ✅ Installed PyTorch (for deep learning) with proper CUDA support
+- ✅ Installed all ML libraries from the project dependencies (NumPy, Matplotlib, Pandas, Scikit-learn, Jupyter, etc.)
+- ✅ Set up everything needed to run the interactive notebooks
 
-### How to Start Learning
+### 🎯 How to Start Learning
 
 #### Option 1: Run Interactive Notebooks in VS Code (Recommended)
 VS Code provides an integrated development environment with excellent Jupyter support and is the recommended approach for this course.
@@ -95,7 +95,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 4. **Click "Preview"** in the top-right corner
 
 
-### Daily Workflow
+### 🔧 Daily Workflow
 
 **Every time you want to work on this book:**
 
@@ -110,10 +110,10 @@ VS Code provides an integrated development environment with excellent Jupyter su
 - Just close VS Code or the notebook file - that's it!
 
 
-### Troubleshooting
+### 🆘 Troubleshooting
 
 #### "Conda not found"
-- **Solution:** Install Miniforge from [miniforge.io](https://github.com/conda-forge/miniforge)
+- **Solution:** Install Miniforge from [conda-forge.org/download](https://conda-forge.org/download/)
 - **Restart your terminal** after installing
 
 #### "Permission denied" (Mac/Linux)
@@ -142,7 +142,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 #### GitHub: "Authentication failed" when cloning
 - **Solution:** Make sure you created a GitHub account and verified your email
 
-### Course Content
+### 📚 Course Content
 
 #### Interactive Textbook
 - **Part 1:** Foundational Skills (evaluating models, taking derivatives)
@@ -159,7 +159,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 #### Problem Sets
 - **PS1:** Hands-on exercises to practice course concepts
 
-### Suggested Learning Path
+### 🎓 Suggested Learning Path
 
 #### Week 1: Fundamentals
 1. **Read:** Introduction and Part 1 overview
@@ -181,7 +181,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 2. **Complete:** Advanced notebooks
 3. **Explore:** Independent projects
 
-### Useful Commands
+### 🔗 Useful Commands
 
 | What you want to do | Command |
 |---------------------|---------|
@@ -203,7 +203,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 
 ---
 
-## For Instructors: Compiling the Book
+## 👨‍🏫 For Instructors: Compiling the Book
 
 I am using [Quarto](https://quarto.org/) for this book, and you can render the book using the following steps:
 
