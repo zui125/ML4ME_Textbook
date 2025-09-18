@@ -71,62 +71,44 @@ The setup script automatically:
 
 ### 🚀 How to Start Learning
 
-#### Option 1: Read the Book Online
+#### Option 1: Run Interactive Notebooks in VS Code (Recommended)
+**VS Code is the best way to learn with this book!** It provides an integrated development environment with excellent Jupyter support.
+
+1. **Open VS Code**
+2. **Open the book folder**
+3. **Click on any `.ipynb` file in the `notebooks` folder**
+4. **VS Code will ask you to select a kernel - choose "ml4me-student"**
+5. **Start coding!** The notebook will run directly in VS Code
+
+**Why VS Code is great for ML:**
+- ✅ **Integrated experience** - no switching between browser and terminal
+- ✅ **Smart autocomplete** and IntelliSense for Python
+- ✅ **Built-in debugging** tools for troubleshooting
+- ✅ **Git integration** for version control
+- ✅ **Extension ecosystem** for ML/AI development
+- ✅ **Integrated terminal** for running commands
+
+#### Option 2: Read the Book Online
 1. **Open VS Code**
 2. **Open the book folder**
 3. **Double-click `index.qmd`**
 4. **Click "Preview"** in the top-right corner
 
-#### Option 2: Run Interactive Notebooks in VS Code (Recommended)
-1. **Open VS Code**
-2. **Open the book folder**
-3. **Click on any `.ipynb` file in the `notebooks` folder**
-4. **VS Code will ask you to select a kernel - choose "ml4me-student"**
-5. **Start coding!** The notebook will run in VS Code
-
-#### Option 3: Run Interactive Notebooks in Browser
-1. **Open Terminal/Command Prompt:**
-   - **Windows:** Open "Miniforge Prompt" from Start Menu
-   - **Mac/Linux:** Open Terminal
-2. **Type these commands:**
-   ```bash
-   conda activate ml4me-student
-   jupyter notebook
-   ```
-3. **Your browser opens automatically**
-4. **Click on any `.ipynb` file in the `notebooks` folder**
 
 ### 🔧 Daily Workflow
 
 **Every time you want to work on this book:**
 
-#### If using VS Code (Recommended):
+#### VS Code Workflow (Recommended):
 1. **Open VS Code**
-2. **Open the book folder**
-3. **Click on any `.ipynb` file**
-4. **Select "ml4me-student" kernel when prompted**
-5. **Start coding!**
-
-#### If using Jupyter in browser:
-1. **Open Terminal/Command Prompt:**
-   - **Windows:** Open "Miniforge Prompt" from Start Menu
-   - **Mac/Linux:** Open Terminal
-2. **Navigate to the book:**
-   ```bash
-   cd ML4ME_Textbook
-   ```
-3. **Activate the environment:**
-   ```bash
-   conda activate ml4me-student
-   ```
-4. **Start Jupyter:**
-   ```bash
-   jupyter notebook
-   ```
+2. **Open the book folder** (File → Open Folder)
+3. **Click on any `.ipynb` file** in the `notebooks` folder
+4. **Select "ml4me-student" kernel** when prompted
+5. **Start coding!** Everything runs in VS Code
 
 **When you're done:**
-- **VS Code:** Just close the file
-- **Browser:** Close the browser tab, press `Ctrl+C` twice in terminal, type `conda deactivate`
+- Just close VS Code or the notebook file - that's it!
+
 
 ### 🆘 Troubleshooting
 
@@ -140,8 +122,6 @@ The setup script automatically:
 #### "Python not found"
 - **Solution:** Make sure you activated the environment: `conda activate ml4me-student`
 
-#### Jupyter won't start
-- **Solution:** Try `jupyter lab` instead of `jupyter notebook`
 
 #### VS Code can't find Python
 - **Solution:** 
@@ -207,8 +187,6 @@ The setup script automatically:
 |---------------------|---------|
 | Activate environment | `conda activate ml4me-student` |
 | Deactivate environment | `conda deactivate` |
-| Start Jupyter | `jupyter notebook` |
-| Start Jupyter Lab | `jupyter lab` |
 | Check Python version | `python --version` |
 | List installed packages | `pip list` |
 | Update a package | `pip install --upgrade package_name` |
@@ -221,9 +199,7 @@ The setup script automatically:
 3. **Ask your instructor** - they're here to help!
 
 #### **Common Issues:**
-- **"Module not found"** → Make sure environment is activated
-- **"Permission denied"** → Try running terminal as administrator (Windows)
-- **"Port already in use"** → Try `jupyter notebook --port 8889`
+- **"Module not found"** → Make sure you selected the "ml4me-student" kernel in VS Code
 
 ---
 
