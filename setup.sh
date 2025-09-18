@@ -29,8 +29,25 @@ fi
 
 echo "🖥️  Detected OS: $OS"
 
-echo "🫙 Creating conda environment..."
-conda env create -f environment.yml
+# Check for NVIDIA GPU on Linux/Windows
+HAS_NVIDIA_GPU=false
+if [[ "$OS" == "linux" ]] || [[ "$OS" == "windows" ]]; then
+    if command -v nvidia-smi &> /dev/null; then
+        echo "🎮 NVIDIA GPU detected"
+        HAS_NVIDIA_GPU=true
+    else
+        echo "💻 No NVIDIA GPU detected, using CPU-only PyTorch"
+    fi
+fi
+
+# Choose environment file based on GPU availability
+if [[ "$HAS_NVIDIA_GPU" == true ]]; then
+    echo "🫙 Creating conda environment with CUDA support..."
+    conda env create -f environment-gpu.yml
+else
+    echo "🫙 Creating conda environment..."
+    conda env create -f environment.yml
+fi
 
 echo "🔄 Activating environment..."
 eval "$(conda shell.bash hook)"
@@ -40,12 +57,12 @@ echo "📦 Installing PyTorch..."
 if [[ "$OS" == "macos" ]]; then
     echo "   Installing PyTorch for macOS..."
     pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1
-elif [[ "$OS" == "linux" ]] || [[ "$OS" == "windows" ]]; then
-    echo "   Installing PyTorch with CUDA support for $OS..."
+elif [[ "$HAS_NVIDIA_GPU" == true ]]; then
+    echo "   Installing PyTorch with CUDA support..."
     pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 else
-    echo "   Installing PyTorch (default)..."
-    pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1
+    echo "   Installing PyTorch CPU-only version..."
+    pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cpu
 fi
 
 echo "📚 Installing ML and Data Science libraries..."
