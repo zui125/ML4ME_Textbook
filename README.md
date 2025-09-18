@@ -132,9 +132,10 @@ VS Code provides an integrated development environment with excellent Jupyter su
 #### VS Code can't find the conda kernel
 - **Solution:**
   1. Open a `.ipynb` file in VS Code
-  2. Click on the kernel name in the top-right corner
-  3. Select "ml4me-student" from the list
-  4. If not listed, select "Select Another Kernel" → "Python Environments" → "ml4me-student"
+  2. **Method 1:** Click on the kernel name in the top-right corner of the notebook
+  3. **Method 2:** Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac), type "Notebook: Select Notebook Kernel"
+  4. Select "ml4me-student" from the list
+  5. If not listed, select "Select Another Kernel" → "Python Environments" → "ml4me-student"
 
 #### Windows: "conda command not found" in regular Command Prompt
 - **Solution:** Always use "Miniforge Prompt" from Start Menu, NOT regular Command Prompt
