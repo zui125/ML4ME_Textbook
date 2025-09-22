@@ -8,6 +8,33 @@ This is a textbook repository for the ETHZ Machine Learning for Mechanical Engin
 
 This guide provides step-by-step instructions to set up the machine learning environment required for this course. No prior Python experience is required.
 
+### 🌟 Alternative: Google Colab (No Setup Required)
+
+**For students who prefer a cloud-based environment without local installation:**
+
+1. **Go to [colab.research.google.com](https://colab.research.google.com)**
+2. **Sign in with your Google account**
+3. **Click "New Notebook"**
+4. **Upload any `.ipynb` file from this book** (from the `notebooks` folder)
+5. **Install required packages** by running this in the first cell:
+   ```python
+   !pip install torch torchvision torchaudio
+   !pip install numpy matplotlib seaborn scikit-learn pandas scipy
+   ```
+6. **Enable GPU (optional):** Runtime → Change runtime type → GPU → Save
+
+**Benefits:**
+- No local installation required
+- Free GPU access (CUDA automatically configured)
+- Runs entirely in your browser
+- All packages pre-installed except ML libraries
+
+**Note:** You'll need to reinstall packages each time you start a new Colab session.
+
+---
+
+### 💻 Local Setup (Recommended for Course)
+
 ### 🚀 Quick Start (4 Steps)
 
 #### Step 1: Create GitHub Account
@@ -140,6 +167,21 @@ VS Code provides an integrated development environment with excellent Jupyter su
 
 #### GitHub: "Authentication failed" when cloning
 - **Solution:** Make sure you created a GitHub account and verified your email
+
+#### Colab: "Package not found" error
+- **Solution:** Run the package installation cell first:
+  ```python
+  !pip install torch torchvision torchaudio
+  !pip install numpy matplotlib seaborn scikit-learn pandas scipy
+  ```
+
+#### Colab: "CUDA out of memory" error
+- **Solution:** 
+  1. Runtime → Restart runtime
+  2. Or use CPU: Runtime → Change runtime type → CPU → Save
+
+#### Colab: Notebook disconnects after inactivity
+- **Solution:** This is normal - just reconnect and re-run the package installation cell
 
 ### 📚 Course Content
 
