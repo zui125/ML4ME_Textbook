@@ -577,7 +577,7 @@ Cost = Loss(w,D) + \Omega(w)
 ||\mathbf{x}||_p = \left(|x_1|^p + |x_2|^p+\cdots + |x_n|^p\right)^{1/p} = \left(\sum_{i=1}^n \left| x_i \right|^p \right)^p
 \]</span></p>
 <p>Specifically, the Euclidean Norm is called the L2-norm, or sometimes just the 2-norm. To see why this is, just set <span class="math inline">\(p=2\)</span> in the above, and note how it corresponds to the Euclidean Norm that we all know and love. So, by setting <span class="math inline">\(p\)</span> to a number between <span class="math inline">\(0\)</span> and <span class="math inline">\(\infty\)</span>, we can modify what the <em>total weight</em> means, and setting <span class="math inline">\(p=2\)</span> is the setting which we are all most familiar with. To get a visual sense of how norms vary, see below, which visualizes a line of “circle” of radius 1, but where the length of the line is determined by the p-norm. You will see that when p=2 this corresponds to what we are familiar with, but when p goes up or down things change.</p>
-<div id="cell-9" class="cell">
+<div id="cell-9" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, FloatSlider</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to compute and plot the p-norm unit ball in 2D</span></span>
@@ -612,7 +612,7 @@ Cost = Loss(w,D) + \Omega(w)
 <span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"dbeeb275e71449d7b0c93c768e93c2ac","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"0063501f8fed45768df70fd8f787425e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -771,7 +771,7 @@ y_test
 </div>
 </div>
 <p>Key idea in cross validation is to test the model on data that was separate from the data you trained on.</p>
-<div id="cell-17" class="cell" data-scrolled="false" data-execution_count="11">
+<div id="cell-17" class="cell" data-scrolled="false" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> [<span class="dv">0</span>, <span class="fl">1e-20</span>, <span class="fl">1e-10</span>, <span class="fl">1e-7</span>, <span class="fl">1e-5</span>, <span class="dv">1</span>,<span class="dv">10</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>d<span class="op">=</span><span class="dv">15</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> alphas:</span>
