@@ -197,24 +197,6 @@ VS Code provides an integrated development environment with excellent Jupyter su
 #### Colab: Notebook disconnects after inactivity
 - **Solution:** This is normal - just reconnect and re-run the package installation cell
 
-### 📚 Course Content
-
-#### Interactive Textbook
-- **Part 1:** Foundational Skills (evaluating models, taking derivatives)
-- **Part 2:** Model-Specific Approaches (neural networks, probabilistic models)
-- **Part 3:** Engineering-Specific Considerations
-
-#### Interactive Notebooks
-- **California Housing Visualization** - Data visualization fundamentals
-- **Linear Regression** - Introduction to machine learning
-- **PyTorch Autograd** - Automatic differentiation
-- **Polynomial Regression** - Model complexity analysis
-- **Cross Validation** - Model evaluation techniques
-
-#### Problem Sets
-- **PS1:** Hands-on exercises to practice course concepts
-
-
 ### 🔗 Useful Commands
 
 | What you want to do | Command |
