@@ -6,7 +6,12 @@ echo Setting up ML4ME Textbook Environment...
 echo ==============================================
 
 REM Check if conda is available
-conda --version >nul 2>&1
+echo %errorlevel%
+@REM store conda command output to errorlevel
+where conda >nul 2>&1
+
+echo Checking for Conda...
+echo %errorlevel%
 if %errorlevel% neq 0 (
     echo ERROR: Conda not found. Please install Miniforge first:
     echo    https://github.com/conda-forge/miniforge
