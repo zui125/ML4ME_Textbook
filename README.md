@@ -29,23 +29,15 @@ This guide provides step-by-step instructions to set up the machine learning env
 - Runs entirely in your browser
 - All packages pre-installed except ML libraries
 
-**Note:** You'll need to reinstall packages each time you start a new Colab session.
+**Note:** You will need to reinstall packages each time you start a new Colab session.
 
 ---
 
 ### 💻 Local Setup (Recommended for Course)
 
-### 🚀 Quick Start (4 Steps)
+### 🚀 Quick Start (3 Steps)
 
-#### Step 1: Create GitHub Account
-**You need a GitHub account to download this book:**
-
-1. **Go to [github.com](https://github.com)**
-2. **Click "Sign up"**
-3. **Create your account** (use your ETH email if you have one)
-4. **Verify your email**
-
-#### Step 2: Install Prerequisites
+#### Step 1: Install Prerequisites
 **You need these 2 things:**
 
 1. **Miniforge** (Python package manager)
@@ -57,9 +49,10 @@ This guide provides step-by-step instructions to set up the machine learning env
    - Download from [code.visualstudio.com](https://code.visualstudio.com/)
    - Install it (just click through the installer)
 
-#### Step 3: Get This Book
-**Copy this book to your computer:**
+#### Step 2: Get This Book
+**Copy this book to your computer (choose one method):**
 
+**Method A: VS Code Git Clone (Recommended)**
 1. **Open VS Code**
 2. **Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)**
 3. **Type "Git: Clone" and press Enter**
@@ -67,7 +60,13 @@ This guide provides step-by-step instructions to set up the machine learning env
 5. **Choose a folder** (like Desktop or Documents)
 6. **Wait for it to download**
 
-#### Step 4: Run the Auto-Setup
+**Method B: Direct Download (Easiest)**
+1. **Go to [github.com/IDEALLab/ML4ME_Textbook](https://github.com/IDEALLab/ML4ME_Textbook)**
+2. **Click "Code" → "Download ZIP"**
+3. **Extract the ZIP file** to your desired folder
+4. **Open the folder in VS Code**
+
+#### Step 3: Run the Auto-Setup
 **This installs everything automatically:**
 
 1. **Open Terminal/Command Prompt:**
@@ -87,6 +86,21 @@ This guide provides step-by-step instructions to set up the machine learning env
 4. **Wait 5-10 minutes** (the script downloads and installs required software)
 
 5. **Setup complete**
+
+### 📝 Optional: Create GitHub Account
+
+**You only need a GitHub account if you want to:**
+- Contribute to the course materials
+- Create your own repositories
+- Use advanced Git features
+
+**To create a free account:**
+1. **Go to [github.com](https://github.com)**
+2. **Click "Sign up"**
+3. **Create your account** (use your ETH email if you have one)
+4. **Verify your email**
+
+**Note:** This is completely optional for just using the course materials.
 
 ### ✅ What the Setup Script Does
 
@@ -166,7 +180,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 - **Solution:** Always use "Miniforge Prompt" from Start Menu, NOT regular Command Prompt
 
 #### GitHub: "Authentication failed" when cloning
-- **Solution:** Make sure you created a GitHub account and verified your email
+- **Solution:** Use Method B (Direct Download) instead, or create a free GitHub account if you want to use Git features
 
 #### Colab: "Package not found" error
 - **Solution:** Run the package installation cell first:
