@@ -4,18 +4,18 @@
 
 set -e  # Exit on any error
 
-echo "🚀 Setting up ML4ME Textbook Environment..."
+echo "Setting up ML4ME Textbook Environment..."
 echo "=============================================="
 
 # Check if conda is available
 if ! command -v conda &> /dev/null; then
-    echo "❌ Conda not found. Please install Miniforge first:"
+    echo "ERROR: Conda not found. Please install Miniforge first:"
     echo "   https://github.com/conda-forge/miniforge"
     echo "   Then restart your terminal and run this script again."
     exit 1
 fi
 
-echo "✅ Conda found"
+echo "SUCCESS: Conda found"
 
 # Detect OS
 OS="unknown"
@@ -36,37 +36,37 @@ else
     esac
 fi
 
-echo "🖥️  Detected OS: $OS"
+echo "Detected OS: $OS"
 
 # Check for NVIDIA GPU on Linux/Windows
 HAS_NVIDIA_GPU=false
 if [[ "$OS" == "linux" ]] || [[ "$OS" == "windows" ]]; then
     # Try multiple ways to detect NVIDIA GPU
     if command -v nvidia-smi &> /dev/null && nvidia-smi &> /dev/null; then
-        echo "🎮 NVIDIA GPU detected via nvidia-smi"
+        echo "NVIDIA GPU detected via nvidia-smi"
         HAS_NVIDIA_GPU=true
     elif command -v lspci &> /dev/null && lspci | grep -i nvidia &> /dev/null; then
-        echo "🎮 NVIDIA GPU detected via lspci"
+        echo "NVIDIA GPU detected via lspci"
         HAS_NVIDIA_GPU=true
     else
-        echo "💻 No NVIDIA GPU detected, using CPU-only PyTorch"
+        echo "No NVIDIA GPU detected, using CPU-only PyTorch"
     fi
 fi
 
 # Choose environment file based on GPU availability
 if [[ "$HAS_NVIDIA_GPU" == true ]]; then
-    echo "🫙 Creating conda environment with CUDA support..."
+    echo "Creating conda environment with CUDA support..."
     conda env create -f environment-gpu.yml
 else
-    echo "🫙 Creating conda environment..."
+    echo "Creating conda environment..."
     conda env create -f environment.yml
 fi
 
-echo "🔄 Activating environment..."
+echo "Activating environment..."
 eval "$(conda shell.bash hook)"
 conda activate ml4me-student
 
-echo "📦 Installing PyTorch..."
+echo "Installing PyTorch..."
 if [[ "$OS" == "macos" ]]; then
     echo "   Installing PyTorch for macOS..."
     pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1
@@ -78,17 +78,17 @@ else
     pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cpu
 fi
 
-echo "📚 Installing ML and Data Science libraries..."
+echo "Installing ML and Data Science libraries..."
 pip install .
 
-echo "🧪 Testing the setup..."
-python -c "import torch; print(f'✅ PyTorch {torch.__version__} installed successfully')"
-python -c "import numpy; print(f'✅ NumPy {numpy.__version__} installed successfully')"
-python -c "import matplotlib; print(f'✅ Matplotlib {matplotlib.__version__} installed successfully')"
-python -c "import sklearn; print(f'✅ Scikit-learn {sklearn.__version__} installed successfully')"
+echo "Testing the setup..."
+python -c "import torch; print(f'SUCCESS: PyTorch {torch.__version__} installed successfully')"
+python -c "import numpy; print(f'SUCCESS: NumPy {numpy.__version__} installed successfully')"
+python -c "import matplotlib; print(f'SUCCESS: Matplotlib {matplotlib.__version__} installed successfully')"
+python -c "import sklearn; print(f'SUCCESS: Scikit-learn {sklearn.__version__} installed successfully')"
 
 echo ""
-echo "🎉 Setup complete!"
+echo "Setup complete!"
 echo "=============================================="
 echo ""
 echo "Next steps:"
@@ -98,7 +98,8 @@ echo "3. Open any notebook from the 'notebooks' folder"
 echo ""
 echo "Useful commands:"
 echo "  conda activate ml4me-student    # Activate environment"
-echo "  jupyter notebook                # Start Jupyter"
-echo "  python notebooks/example.py     # Run Python scripts"
+echo "  conda deactivate                # Deactivate environment"
+
+
 echo ""
-echo "Happy learning! 🎓"
+echo "Happy learning!"
