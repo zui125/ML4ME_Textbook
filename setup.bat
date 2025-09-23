@@ -2,6 +2,9 @@
 REM Student Auto-Setup Script for ML4ME Textbook
 REM This script sets up everything needed to run the machine learning examples
 
+REM Always run relative paths (environment.yml, .) from repo root
+cd /d "%~dp0"
+
 echo Setting up ML4ME Textbook Environment...
 echo ==============================================
 
