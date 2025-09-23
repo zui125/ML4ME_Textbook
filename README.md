@@ -43,7 +43,23 @@ This guide provides step-by-step instructions to set up the machine learning env
 1. **Miniforge** (Python package manager)
    - Download from the official [conda-forge website](https://conda-forge.org/download/)
    - Choose the appropriate installer for your operating system
-   - Install it (just click through the installer)
+   - **Windows:** Double-click the `.exe` file and follow the installer
+   - **Mac/Linux:** After downloading, run these commands in Terminal:
+     ```bash
+     # For Mac (choose the right one for your chip):
+     chmod +x Miniforge3-latest-MacOSX-arm64.sh    # Apple Silicon (M1/M2/M3)
+     # or
+     chmod +x Miniforge3-latest-MacOSX-x86_64.sh   # Intel Mac
+     # or
+     chmod +x Miniforge3-latest-Linux-x86_64.sh    # Linux
+     
+     # Then run the appropriate installer:
+     ./Miniforge3-latest-MacOSX-arm64.sh           # Apple Silicon
+     # or
+     ./Miniforge3-latest-MacOSX-x86_64.sh          # Intel Mac  
+     # or
+     ./Miniforge3-latest-Linux-x86_64.sh           # Linux
+     ```
 
 2. **VS Code** (code editor)
    - Download from [code.visualstudio.com](https://code.visualstudio.com/)
