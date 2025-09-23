@@ -47,32 +47,32 @@ if %errorlevel% equ 0 (
 REM Choose environment file based on GPU availability
 if "%HAS_NVIDIA_GPU%"=="true" (
     echo Creating conda environment with CUDA support...
-    conda env create -f environment-gpu.yml
+    call conda env create -f environment-gpu.yml
 ) else (
     echo Creating conda environment...
-    conda env create -f environment.yml
+    call conda env create -f environment.yml
 )
 
 echo Activating environment...
-conda activate ml4me-student
+call conda activate ml4me-student
 
 echo Installing PyTorch...
 if "%HAS_NVIDIA_GPU%"=="true" (
     echo    Installing PyTorch with CUDA support...
-    pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
+    call pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 ) else (
     echo    Installing PyTorch CPU-only version...
-    pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+    call pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cpu
 )
 
 echo Installing ML and Data Science libraries...
-pip install .
+call pip install .
 
 echo Testing the setup...
-python -c "import torch; print('SUCCESS: PyTorch', torch.__version__, 'installed successfully')"
-python -c "import numpy; print('SUCCESS: NumPy', numpy.__version__, 'installed successfully')"
-python -c "import matplotlib; print('SUCCESS: Matplotlib', matplotlib.__version__, 'installed successfully')"
-python -c "import sklearn; print('SUCCESS: Scikit-learn', sklearn.__version__, 'installed successfully')"
+call python -c "import torch; print('SUCCESS: PyTorch', torch.__version__, 'installed successfully')"
+call python -c "import numpy; print('SUCCESS: NumPy', numpy.__version__, 'installed successfully')"
+call python -c "import matplotlib; print('SUCCESS: Matplotlib', matplotlib.__version__, 'installed successfully')"
+call python -c "import sklearn; print('SUCCESS: Scikit-learn', sklearn.__version__, 'installed successfully')"
 
 echo.
 echo Setup complete!
@@ -85,8 +85,7 @@ echo 3. Open any notebook from the 'notebooks' folder
 echo.
 echo Useful commands:
 echo   conda activate ml4me-student    # Activate environment
-echo   jupyter notebook                # Start Jupyter
-echo   python notebooks/example.py     # Run Python scripts
+echo   conda deactivate                # Deactivate environment
 echo.
 echo Happy learning!
 pause
