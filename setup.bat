@@ -54,7 +54,7 @@ if "%HAS_NVIDIA_GPU%"=="true" (
 )
 
 echo Activating environment...
-call conda activate ml4me-student
+conda activate ml4me-student
 
 echo Installing PyTorch...
 if "%HAS_NVIDIA_GPU%"=="true" (
