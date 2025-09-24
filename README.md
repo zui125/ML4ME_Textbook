@@ -96,8 +96,8 @@ This guide provides step-by-step instructions to set up the machine learning env
    ```
 
 3. **Run the setup script:**
-   - **Windows:** Type `setup.bat` in Miniforge Prompt
-   - **Mac/Linux:** Type `./setup.sh` in terminal
+   - **Windows:** Type `python bootstrap_env.py` in Miniforge Prompt
+   - **Mac/Linux:** Type `python bootstrap_env.py` in terminal
 
 4. **Wait 5-10 minutes** (the script downloads and installs required software)
 
@@ -172,7 +172,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 - **Restart your terminal** after installing
 
 #### "Permission denied" (Mac/Linux)
-- **Solution:** Type `chmod +x setup.sh` first, then `./setup.sh`
+- **Solution:** Make sure you have Python installed and accessible in your terminal
 
 #### "Python not found"
 - **Solution:** Make sure you activated the environment: `conda activate ml4me-student`
@@ -232,6 +232,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 
 #### Common Issues:
 - **"Module not found"** → Make sure you selected the "ml4me-student" kernel in VS Code
+- **CUDA/NVIDIA messages when activating environment** → This is normal on Windows/Linux with NVIDIA GPUs; macOS doesn't show these because CUDA packages aren't present there
 
 ---
 
