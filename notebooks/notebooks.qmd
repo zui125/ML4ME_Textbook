@@ -5,3 +5,4 @@ This is a list of some of the in-class notebooks I have created for my course, e
 - Reviewing Data Visualization: [California Housing Dataset](california_housing_visualization.ipynb)
 - [Introduction to Linear Regression and Cross-Validation](cross_validation_linear_regression.ipynb)
 - [Introduction to Gradient Descent](supervised_linear_models.ipynb)
+- [Loss Functions for Linear Models](loss_functions_for_linear_models.ipynb)
