@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Taking Derivatives – Machine Learning for Mechanical Engineering</title>
+<title>5&nbsp; Taking Derivatives – Machine Learning for Mechanical Engineering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../references.html" rel="next">
-<link href="../notebooks/supervised_linear_models.html" rel="prev">
+<link href="../part1/linear_decompositions.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -112,7 +112,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1/part1.html">Foundational Skills</a></li><li class="breadcrumb-item"><a href="../part1/taking_derivatives.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1/part1.html">Foundational Skills</a></li><li class="breadcrumb-item"><a href="../part1/taking_derivatives.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,12 +145,6 @@ window.Quarto = {
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../part1/part1.html" class="sidebar-item-text sidebar-link">
@@ -162,20 +156,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../part1/evaluating_models.html" class="sidebar-item-text sidebar-link">
+  <a href="../part1/reviewing_supervised_linear_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reviewing Supervised Linear Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/cross_validation_linear_regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evaluating Machine Learning Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/supervised_linear_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Linear Regression and Gradient Descent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Gradient Descent</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part1/linear_decompositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Review of Linear Unsupervised Learning</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../part1/taking_derivatives.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></span></a>
   </div>
 </li>
       </ul>
@@ -198,7 +204,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/ps1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Problem Set 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Problem Set 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -215,19 +221,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/california_housing_visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Housing Price Data Visualization In-Class Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Housing Price Data Visualization In-Class Exercise</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/supervised_linear_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Linear Regression and Gradient Descent</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Gradient Descent</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/pytorch_autograd_verlet_integrator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Demonstration of AD on Verlet Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Demonstration of AD on Verlet Integration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/loss_functions_for_linear_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Examples of Loss Functions for Linear Models</span></span></a>
   </div>
 </li>
       </ul>
@@ -265,16 +277,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#automatic-differentiation" id="toc-automatic-differentiation" class="nav-link active" data-scroll-target="#automatic-differentiation"><span class="header-section-number">4.1</span> Automatic Differentiation</a>
+  <li><a href="#automatic-differentiation" id="toc-automatic-differentiation" class="nav-link active" data-scroll-target="#automatic-differentiation"><span class="header-section-number">5.1</span> Automatic Differentiation</a>
   <ul class="collapse">
-  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example"><span class="header-section-number">4.1.1</span> Simple Example</a></li>
-  <li><a href="#differentiable-simulation-using-a-verlet-integrator" id="toc-differentiable-simulation-using-a-verlet-integrator" class="nav-link" data-scroll-target="#differentiable-simulation-using-a-verlet-integrator"><span class="header-section-number">4.1.2</span> Differentiable Simulation using a Verlet Integrator</a></li>
+  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example"><span class="header-section-number">5.1.1</span> Simple Example</a></li>
+  <li><a href="#differentiable-simulation-using-a-verlet-integrator" id="toc-differentiable-simulation-using-a-verlet-integrator" class="nav-link" data-scroll-target="#differentiable-simulation-using-a-verlet-integrator"><span class="header-section-number">5.1.2</span> Differentiable Simulation using a Verlet Integrator</a></li>
   </ul></li>
-  <li><a href="#higher-order-derivatives" id="toc-higher-order-derivatives" class="nav-link" data-scroll-target="#higher-order-derivatives"><span class="header-section-number">4.4</span> Higher-Order Derivatives</a></li>
-  <li><a href="#implicit-differentiation" id="toc-implicit-differentiation" class="nav-link" data-scroll-target="#implicit-differentiation"><span class="header-section-number">4.5</span> Implicit Differentiation</a>
+  <li><a href="#higher-order-derivatives" id="toc-higher-order-derivatives" class="nav-link" data-scroll-target="#higher-order-derivatives"><span class="header-section-number">5.4</span> Higher-Order Derivatives</a></li>
+  <li><a href="#implicit-differentiation" id="toc-implicit-differentiation" class="nav-link" data-scroll-target="#implicit-differentiation"><span class="header-section-number">5.5</span> Implicit Differentiation</a>
   <ul class="collapse">
-  <li><a href="#simple-example-1" id="toc-simple-example-1" class="nav-link" data-scroll-target="#simple-example-1"><span class="header-section-number">4.5.1</span> Simple Example</a></li>
-  <li><a href="#hyper-parameter-tuning-with-gradient-descent" id="toc-hyper-parameter-tuning-with-gradient-descent" class="nav-link" data-scroll-target="#hyper-parameter-tuning-with-gradient-descent"><span class="header-section-number">4.5.2</span> Hyper-Parameter Tuning with Gradient Descent</a></li>
+  <li><a href="#simple-example-1" id="toc-simple-example-1" class="nav-link" data-scroll-target="#simple-example-1"><span class="header-section-number">5.5.1</span> Simple Example</a></li>
+  <li><a href="#hyper-parameter-tuning-with-gradient-descent" id="toc-hyper-parameter-tuning-with-gradient-descent" class="nav-link" data-scroll-target="#hyper-parameter-tuning-with-gradient-descent"><span class="header-section-number">5.5.2</span> Hyper-Parameter Tuning with Gradient Descent</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -282,9 +294,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1/part1.html">Foundational Skills</a></li><li class="breadcrumb-item"><a href="../part1/taking_derivatives.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part1/part1.html">Foundational Skills</a></li><li class="breadcrumb-item"><a href="../part1/taking_derivatives.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-taking-derivatives" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></span></h1>
+<h1 class="title"><span id="sec-taking-derivatives" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taking Derivatives</span></span></h1>
 </div>
 
 
@@ -308,22 +320,22 @@ window.Quarto = {
 <li>Automatic Differentiation</li>
 </ul>
 <p>Insert Table showing benefits and drawbacks</p>
-<section id="automatic-differentiation" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="automatic-differentiation"><span class="header-section-number">4.1</span> Automatic Differentiation</h2>
+<section id="automatic-differentiation" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="automatic-differentiation"><span class="header-section-number">5.1</span> Automatic Differentiation</h2>
 <ul>
 <li>Forward Mode AD</li>
 <li>Backward Mode AD</li>
 </ul>
-<section id="simple-example" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">4.1.1</span> Simple Example</h3>
+<section id="simple-example" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">5.1.1</span> Simple Example</h3>
 </section>
-<section id="differentiable-simulation-using-a-verlet-integrator" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="differentiable-simulation-using-a-verlet-integrator"><span class="header-section-number">4.1.2</span> Differentiable Simulation using a Verlet Integrator</h3>
+<section id="differentiable-simulation-using-a-verlet-integrator" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="differentiable-simulation-using-a-verlet-integrator"><span class="header-section-number">5.1.2</span> Differentiable Simulation using a Verlet Integrator</h3>
 </section>
 </section>
 <div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ML4ME_Textbook/ML4ME_Textbook/notebooks/pytorch_autograd_verlet_integrator.ipynb" data-notebook-title="Demonstration of AD on Verlet Integration" data-notebook-cellid="cell-0">
-<section id="demonstration-of-ad-on-verlet-integration" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="demonstration-of-ad-on-verlet-integration"><span class="header-section-number">4.2</span> Demonstration of AD on Verlet Integration</h2>
+<section id="demonstration-of-ad-on-verlet-integration" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="demonstration-of-ad-on-verlet-integration"><span class="header-section-number">5.2</span> Demonstration of AD on Verlet Integration</h2>
 <p>This notebook demonstrates how to use Automatic Differentiation to determine the gradients of the initial conditions of a dynamical system (in this case a damped oscillator). To do this, we will define a numerical routine (<a href="https://en.wikipedia.org/wiki/Verlet_integration">Verlet Integration</a>) and then use Automatic Differentiation to back propagate the gradient information from the output (Total system energy) to the initial conditions.</p>
 <div id="cell-4" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
@@ -360,8 +372,8 @@ tensor([1.0466])</code></pre>
 </div>
 </div>
 </section>
-<section id="optimizing-the-damping-coefficient-via-sgd-and-ad" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="optimizing-the-damping-coefficient-via-sgd-and-ad"><span class="header-section-number">4.3</span> Optimizing the Damping Coefficient via SGD and AD</h2>
+<section id="optimizing-the-damping-coefficient-via-sgd-and-ad" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="optimizing-the-damping-coefficient-via-sgd-and-ad"><span class="header-section-number">5.3</span> Optimizing the Damping Coefficient via SGD and AD</h2>
 <p>First let’s just get a visual intuition for how <span class="math inline">\(\gamma\)</span> affects the final energy:</p>
 <div id="cell-12" class="cell" data-execution_count="23">
 <div class="cell-output cell-output-display" data-execution_count="23">
@@ -377,8 +389,8 @@ tensor([1.0466])</code></pre>
 </div>
 <p>We can see that there is a pretty flat plateau from around <span class="math inline">\(\gamma=1\)</span> until around <span class="math inline">\(\gamma=3\)</span>.</p>
 <p>Now let’s use our backward mode AD to actually optimize <span class="math inline">\(\gamma\)</span> directly by calling backward on the output of the final energy of the Verlet integration of the ODE:</p>
-<section id="adam-example" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="adam-example"><span class="header-section-number">4.3.1</span> ADAM Example</h3>
+<section id="adam-example" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="adam-example"><span class="header-section-number">5.3.1</span> ADAM Example</h3>
 <div id="cell-16" class="cell" data-scrolled="false" data-execution_count="25">
 <div class="cell-output cell-output-display">
 <div>
@@ -431,8 +443,8 @@ tensor([1.0466])</code></pre>
 </div>
 </div>
 </section>
-<section id="sgd-example" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="sgd-example"><span class="header-section-number">4.3.2</span> SGD Example</h3>
+<section id="sgd-example" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="sgd-example"><span class="header-section-number">5.3.2</span> SGD Example</h3>
 <div id="cell-18" class="cell" data-scrolled="false" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div>
@@ -485,12 +497,12 @@ tensor([1.0466])</code></pre>
 </div>
 </div>
 </section>
-<section id="lbfgs-example" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="lbfgs-example"><span class="header-section-number">4.3.3</span> LBFGS Example</h3>
+<section id="lbfgs-example" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="lbfgs-example"><span class="header-section-number">5.3.3</span> LBFGS Example</h3>
 <p>(Warning: Per-run solves of LBFGS take a while, so don’t set num_steps too high here)</p>
 </section>
-<section id="compare-the-steps-taken" class="level3" data-number="4.3.4">
-<h3 data-number="4.3.4" class="anchored" data-anchor-id="compare-the-steps-taken"><span class="header-section-number">4.3.4</span> Compare the steps taken</h3>
+<section id="compare-the-steps-taken" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="compare-the-steps-taken"><span class="header-section-number">5.3.4</span> Compare the steps taken</h3>
 <div id="cell-22" class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display">
 <div>
@@ -503,19 +515,19 @@ tensor([1.0466])</code></pre>
 </section>
 </section>
 </div>
-<section id="higher-order-derivatives" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="higher-order-derivatives"><span class="header-section-number">4.4</span> Higher-Order Derivatives</h2>
+<section id="higher-order-derivatives" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="higher-order-derivatives"><span class="header-section-number">5.4</span> Higher-Order Derivatives</h2>
 <ul>
 <li>Computing Hessians, Hessian Vector Products, Jacobian Vector Products</li>
 </ul>
 </section>
-<section id="implicit-differentiation" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="implicit-differentiation"><span class="header-section-number">4.5</span> Implicit Differentiation</h2>
-<section id="simple-example-1" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="simple-example-1"><span class="header-section-number">4.5.1</span> Simple Example</h3>
+<section id="implicit-differentiation" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="implicit-differentiation"><span class="header-section-number">5.5</span> Implicit Differentiation</h2>
+<section id="simple-example-1" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="simple-example-1"><span class="header-section-number">5.5.1</span> Simple Example</h3>
 </section>
-<section id="hyper-parameter-tuning-with-gradient-descent" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="hyper-parameter-tuning-with-gradient-descent"><span class="header-section-number">4.5.2</span> Hyper-Parameter Tuning with Gradient Descent</h3>
+<section id="hyper-parameter-tuning-with-gradient-descent" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="hyper-parameter-tuning-with-gradient-descent"><span class="header-section-number">5.5.2</span> Hyper-Parameter Tuning with Gradient Descent</h3>
 
 
 </section>
@@ -924,8 +936,8 @@ tensor([1.0466])</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notebooks/supervised_linear_models.html" class="pagination-link" aria-label="Introduction to Linear Regression and Gradient Descent">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to Linear Regression and Gradient Descent</span></span>
+      <a href="../part1/linear_decompositions.html" class="pagination-link" aria-label="Review of Linear Unsupervised Learning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Review of Linear Unsupervised Learning</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
