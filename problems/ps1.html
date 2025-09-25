@@ -567,31 +567,34 @@ Figure 1: Left: Nx-by-Ny design domain for topology optimization problem. Right:
 <p>&nbsp;</p>
 <p>Use Principal Component Analysis (either an existing library, or through your own implementation by taking the SVD of the Covariance Matrix) for the follow tasks.</p>
 <p><sup>1. This problems data is based on the problem setup seen in the following paper: Ulu, E., Zhang, R., &amp; Kara, L. B. (2016). A data-driven investigation and estimation of optimal topologies under variable loading configurations. <em>Computer Methods in Biomechanics and Biomedical Engineering: Imaging &amp; Visualization</em>, 4(2), 61-72.</sup></p>
-<div id="cell-10" class="cell" data-outputid="4139b9f7-52fc-4387-c562-869b08341205" data-execution_count="3">
+<div id="cell-10" class="cell" data-outputid="4139b9f7-52fc-4387-c562-869b08341205" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To help you get started, the below code will load the images from the associated image folder:</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>im_dir <span class="op">=</span> <span class="st">'./topo_opt_runs/'</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> []</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> os.listdir(im_dir):</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> Image.<span class="bu">open</span>(im_dir<span class="op">+</span>filename).convert(<span class="st">'L'</span>)</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        images.append(np.asarray(img))</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>height,width <span class="op">=</span> images[<span class="dv">0</span>].shape</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The images are </span><span class="sc">{:d}</span><span class="st"> pixels high and </span><span class="sc">{:d}</span><span class="st"> pixels wide'</span>.<span class="bu">format</span>(height,width))</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests, zipfile, io</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#im_dir = './topo_opt_runs/'</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/IDEALLab/ML4ME_Textbook/main/problems/topo_opt_runs.zip"</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>resp <span class="op">=</span> requests.get(url)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>resp.raise_for_status()</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>zf <span class="op">=</span> zipfile.ZipFile(io.BytesIO(resp.content))</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> []</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> <span class="bu">sorted</span>(zf.namelist()):</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> zf.<span class="bu">open</span>(name) <span class="im">as</span> f:</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> Image.<span class="bu">open</span>(f).convert(<span class="st">'L'</span>)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        images.append(np.asarray(img))</span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print matrix corresponding to the image:</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(images[<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co"># And show example image, so you can see how matrix correponds:</span></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>img</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>height,width <span class="op">=</span> images[<span class="dv">0</span>].shape</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The images are </span><span class="sc">{:d}</span><span class="st"> pixels high and </span><span class="sc">{:d}</span><span class="st"> pixels wide'</span>.<span class="bu">format</span>(height,width))</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Print matrix corresponding to the image:</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(images[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="co"># And show example image, so you can see how matrix correponds:</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>img</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The images are 217 pixels high and 434 pixels wide
 [[  0   0   0 ... 255 255 255]
@@ -602,18 +605,12 @@ Figure 1: Left: Nx-by-Ny design domain for topology optimization problem. Right:
  [  0   0   0 ...   0   0   0]
  [  0   0   0 ...   0   0   0]]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 <figure class="figure">
 <p><img src="ps1_files/figure-html/ps1_part2-cell-5-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-</div>
-</div>
-<div id="cell-11" class="cell" data-outputid="46f03977-a575-4731-e8dd-e85c758a6d0d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>217</code></pre>
 </div>
 </div>
 </section>
@@ -674,14 +671,14 @@ Cost = \Sigma_{(u,m)\in \mathrm{Ratings}} \frac{1}{2}\left( \langle v_u,v_m \ran
 <p>Using your above gradients, write down the update equations for each vector using stochastic gradient descent. Once you have done this, implement those update equations in code like we did in the in-class notebook. For simplicity, you can just use a constant step size <span class="math inline">\(\alpha\)</span> if you wish, though you may change this if you want. Note: depending on exactly how you implement your model and what batch size you use, i.e., one point at a time, or some subset of data points, values of <span class="math inline">\(\alpha\)</span> anywhere between around 0.7 and 0.01 should be sufficient to converge the model in under 1000 epochs, i.e., passes through the dataset. If you implement more advanced tricks covered in some optional readings this can converge much faster, but that is not necessary for this assignment, and it does not matter to me how quickly your model coverges, so long as it does so.</p>
 <p>Use the below small sample dataset of movie ratings for five users and six movies to perform stochastic gradient descent to update those vectors until your model converges. To initialize your SGD, you can use the initial weights/terms we provide below, or you can initialize the model any other way you wish – the exact initialization should not make a big difference here.</p>
 <div id="cell-4" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your Code below!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your Code below!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-5" class="cell" data-outputid="05af604a-9460-41f6-bb8b-b820cd821405">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>missing_ratings <span class="op">=</span> pd.read_csv(<span class="st">'missing.csv'</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ratings <span class="op">=</span> pd.read_csv(<span class="st">'ratings.csv'</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>ratings</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>missing_ratings <span class="op">=</span> pd.read_csv(<span class="st">'missing.csv'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>ratings <span class="op">=</span> pd.read_csv(<span class="st">'ratings.csv'</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>ratings</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -829,9 +826,9 @@ Cost = \Sigma_{(u,m)\in \mathrm{Ratings}} \frac{1}{2}\left( \langle v_u,v_m \ran
 </div>
 </div>
 <div id="cell-6" class="cell" data-outputid="b10a6d2c-5a8e-4ba8-d929-8f00a66ebc48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternatively, if you prefer, you can convert it into numpy first:</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ratings_numpy <span class="op">=</span> ratings.to_numpy()</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>ratings_numpy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternatively, if you prefer, you can convert it into numpy first:</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>ratings_numpy <span class="op">=</span> ratings.to_numpy()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>ratings_numpy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>array([['The Avengers', 'Alex', 3.0],
        ['The Avengers', 'Priya', 3.5],
@@ -858,16 +855,16 @@ Cost = \Sigma_{(u,m)\in \mathrm{Ratings}} \frac{1}{2}\left( \langle v_u,v_m \ran
 </div>
 <p>Let’s initialize the vectors to some random numbers, and <span class="math inline">\(\mu\)</span> to 2.5</p>
 <div id="cell-8" class="cell" data-outputid="28a202a9-68bb-4cc4-bb46-5849626b0e77">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>K<span class="op">=</span><span class="dv">2</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>user_names <span class="op">=</span> ratings[<span class="st">'user'</span>].unique()</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>movie_names <span class="op">=</span> ratings[<span class="st">'movie'</span>].unique()</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>mu<span class="op">=</span> <span class="fl">2.5</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting the seed of the random generator to a value so that everyone sees the same initialization</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># should should be able to comment out the below with no ill-effects on whatever model you implement</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># this may just help us in office hours if folks have difficulty implementing things</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> pd.DataFrame(np.random.random((<span class="bu">len</span>(user_names)<span class="op">+</span><span class="bu">len</span>(movie_names),K)),index<span class="op">=</span>np.hstack([user_names,movie_names]))</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(V)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>K<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>user_names <span class="op">=</span> ratings[<span class="st">'user'</span>].unique()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>movie_names <span class="op">=</span> ratings[<span class="st">'movie'</span>].unique()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>mu<span class="op">=</span> <span class="fl">2.5</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting the seed of the random generator to a value so that everyone sees the same initialization</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># should should be able to comment out the below with no ill-effects on whatever model you implement</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># this may just help us in office hours if folks have difficulty implementing things</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> pd.DataFrame(np.random.random((<span class="bu">len</span>(user_names)<span class="op">+</span><span class="bu">len</span>(movie_names),K)),index<span class="op">=</span>np.hstack([user_names,movie_names]))</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(V)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                             0         1
 Alex                  0.548814  0.715189
@@ -884,12 +881,12 @@ The Godfather         0.978618  0.799159</code></pre>
 </div>
 </div>
 <div id="cell-9" class="cell" data-outputid="48bde2a6-8577-4fe1-ae1c-80d6d2598569">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is one example of how to go through rows of a ratings matrix</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rating <span class="kw">in</span> ratings.iterrows():</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    user  <span class="op">=</span> rating[<span class="st">'user'</span>]</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    movie <span class="op">=</span> rating[<span class="st">'movie'</span>]</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> rating[<span class="st">'ratings'</span>]</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>user<span class="sc">}</span><span class="ss"> gave </span><span class="sc">{</span>movie<span class="sc">}</span><span class="ss"> a score of </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is one example of how to go through rows of a ratings matrix</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rating <span class="kw">in</span> ratings.iterrows():</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    user  <span class="op">=</span> rating[<span class="st">'user'</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    movie <span class="op">=</span> rating[<span class="st">'movie'</span>]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> rating[<span class="st">'ratings'</span>]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>user<span class="sc">}</span><span class="ss"> gave </span><span class="sc">{</span>movie<span class="sc">}</span><span class="ss"> a score of </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Alex gave The Avengers a score of 3.0
 Priya gave The Avengers a score of 3.5
@@ -915,16 +912,16 @@ Priya gave The Godfather a score of 3.5</code></pre>
 </div>
 </div>
 <div id="cell-11" class="cell" data-outputid="a7c28801-d948-4b69-990b-49d2f87d8ec0">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is an example of one way to access rows of V</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rating <span class="kw">in</span> ratings.iterrows():</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    user  <span class="op">=</span> rating[<span class="st">'user'</span>]</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    movie <span class="op">=</span> rating[<span class="st">'movie'</span>]</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>user<span class="sc">}</span><span class="ss">'s location in V is </span><span class="sc">{</span>V<span class="sc">.</span>loc[user]<span class="sc">.</span>to_numpy()<span class="sc">}</span><span class="ss">."</span>)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>movie<span class="sc">}</span><span class="ss">'s location in V is </span><span class="sc">{</span>V<span class="sc">.</span>loc[movie]<span class="sc">.</span>to_numpy()<span class="sc">}</span><span class="ss">."</span>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co"># You could also do it in Numpy directly, which will likely lead to much faster SGD updates,</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># but that shouldn't be necessary for problems of this size. Up to you!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is an example of one way to access rows of V</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rating <span class="kw">in</span> ratings.iterrows():</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    user  <span class="op">=</span> rating[<span class="st">'user'</span>]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    movie <span class="op">=</span> rating[<span class="st">'movie'</span>]</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>user<span class="sc">}</span><span class="ss">'s location in V is </span><span class="sc">{</span>V<span class="sc">.</span>loc[user]<span class="sc">.</span>to_numpy()<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>movie<span class="sc">}</span><span class="ss">'s location in V is </span><span class="sc">{</span>V<span class="sc">.</span>loc[movie]<span class="sc">.</span>to_numpy()<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># You could also do it in Numpy directly, which will likely lead to much faster SGD updates,</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># but that shouldn't be necessary for problems of this size. Up to you!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Alex's location in V is [0.5488135  0.71518937].
 The Avengers's location in V is [0.79172504 0.52889492].
@@ -995,18 +992,18 @@ The Godfather's location in V is [0.97861834 0.79915856].
 <section id="train-your-bilinear-model-using-sgd" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="train-your-bilinear-model-using-sgd"><span class="header-section-number">6.3.4</span> Train your Bilinear Model using SGD</h3>
 <div id="cell-13" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your Model building and training code here!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your Model building and training code here!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="assessing-your-accuracy" class="level3" data-number="6.3.5">
 <h3 data-number="6.3.5" class="anchored" data-anchor-id="assessing-your-accuracy"><span class="header-section-number">6.3.5</span> Assessing your accuracy</h3>
 <p>Let’s predict the ratings for the missing entries using our (randomly initialized) model.</p>
 <div id="cell-15" class="cell" data-outputid="224356e6-476b-4453-8d84-d00bb42ecaa1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rating <span class="kw">in</span> missing_ratings.iterrows():</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    user  <span class="op">=</span> rating[<span class="st">'user'</span>]</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    movie <span class="op">=</span> rating[<span class="st">'movie'</span>]</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    prediction <span class="op">=</span> np.dot(V.loc[user],V.loc[movie])<span class="op">+</span>mu</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Prediction: </span><span class="sc">{</span>user<span class="sc">}</span><span class="ss"> will rate </span><span class="sc">{</span>movie<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>prediction<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, rating <span class="kw">in</span> missing_ratings.iterrows():</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    user  <span class="op">=</span> rating[<span class="st">'user'</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    movie <span class="op">=</span> rating[<span class="st">'movie'</span>]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    prediction <span class="op">=</span> np.dot(V.loc[user],V.loc[movie])<span class="op">+</span>mu</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Prediction: </span><span class="sc">{</span>user<span class="sc">}</span><span class="ss"> will rate </span><span class="sc">{</span>movie<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>prediction<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Prediction: Sally will rate The Avengers: 3.32
 Prediction: Juan will rate The Avengers: 3.47
