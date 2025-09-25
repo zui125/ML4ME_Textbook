@@ -43,7 +43,23 @@ This guide provides step-by-step instructions to set up the machine learning env
 1. **Miniforge** (Python package manager)
    - Download from the official [conda-forge website](https://conda-forge.org/download/)
    - Choose the appropriate installer for your operating system
-   - Install it (just click through the installer)
+   - **Windows:** Double-click the `.exe` file and follow the installer
+   - **Mac/Linux:** After downloading, run these commands in Terminal:
+     ```bash
+     # For Mac (choose the right one for your chip):
+     chmod +x Miniforge3-latest-MacOSX-arm64.sh    # Apple Silicon (M1/M2/M3)
+     # or
+     chmod +x Miniforge3-latest-MacOSX-x86_64.sh   # Intel Mac
+     # or
+     chmod +x Miniforge3-latest-Linux-x86_64.sh    # Linux
+     
+     # Then run the appropriate installer:
+     ./Miniforge3-latest-MacOSX-arm64.sh           # Apple Silicon
+     # or
+     ./Miniforge3-latest-MacOSX-x86_64.sh          # Intel Mac  
+     # or
+     ./Miniforge3-latest-Linux-x86_64.sh           # Linux
+     ```
 
 2. **VS Code** (code editor)
    - Download from [code.visualstudio.com](https://code.visualstudio.com/)
@@ -80,8 +96,8 @@ This guide provides step-by-step instructions to set up the machine learning env
    ```
 
 3. **Run the setup script:**
-   - **Windows:** Type `setup.bat` in Miniforge Prompt
-   - **Mac/Linux:** Type `./setup.sh` in terminal
+   - **Windows:** Type `python bootstrap_env.py` in Miniforge Prompt
+   - **Mac/Linux:** Type `python bootstrap_env.py` in terminal
 
 4. **Wait 5-10 minutes** (the script downloads and installs required software)
 
@@ -156,7 +172,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 - **Restart your terminal** after installing
 
 #### "Permission denied" (Mac/Linux)
-- **Solution:** Type `chmod +x setup.sh` first, then `./setup.sh`
+- **Solution:** Make sure you have Python installed and accessible in your terminal
 
 #### "Python not found"
 - **Solution:** Make sure you activated the environment: `conda activate ml4me-student`
@@ -216,6 +232,7 @@ VS Code provides an integrated development environment with excellent Jupyter su
 
 #### Common Issues:
 - **"Module not found"** → Make sure you selected the "ml4me-student" kernel in VS Code
+- **CUDA/NVIDIA messages when activating environment** → This is normal on Windows/Linux with NVIDIA GPUs; macOS doesn't show these because CUDA packages aren't present there
 
 ---
 
