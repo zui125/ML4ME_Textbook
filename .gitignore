@@ -211,6 +211,7 @@ Temporary Items
 *.hdf5
 *.parquet
 *.feather
+*.pkz
 
 # Model files
 *.model
@@ -229,3 +230,6 @@ logs/
 *.temp
 temp/
 tmp/
+
+# GitHub
+.github/*.md
