@@ -19,7 +19,7 @@ book:
         #- part1/gradient_descent.qmd
         - notebooks/supervised_linear_models.ipynb
         - part1/linear_decompositions.ipynb
-        - part1/taking_derivatives.qmd
+        - part1/taking_derivatives.ipynb
         #- part1/measuring_distributions.qmd
     #- part: part2/part2.qmd
       #chapters: 
@@ -45,9 +45,6 @@ book:
       number-sections: false
       chapters:
         - notebooks/california_housing_visualization.ipynb
-        - notebooks/supervised_linear_models.ipynb
-        - notebooks/pytorch_autograd_verlet_integrator.ipynb
-        - notebooks/loss_functions_for_linear_models.ipynb
     
   appendices:
     - appendices/helpful_tooling.qmd
