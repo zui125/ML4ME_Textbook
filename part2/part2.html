@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Course Lecture Progression – Machine Learning for Mechanical Engineering</title>
+<title>Model-Specific Approaches – Machine Learning for Mechanical Engineering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../appendices/review_of_singular_value_decomposition.html" rel="next">
-<link href="../appendices/helpful_tooling.html" rel="prev">
+<link href="../part2/review_neural_networks.html" rel="next">
+<link href="../part1/taking_derivatives.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/helpful_tooling.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/course_progression.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Course Lecture Progression</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part2/part2.html">Model-Specific Approaches</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../part2/part2.html" class="sidebar-item-text sidebar-link">
+            <a href="../part2/part2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Model-Specific Approaches</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -231,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../appendices/course_progression.html" class="sidebar-item-text sidebar-link active">
+  <a href="../appendices/course_progression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Course Lecture Progression</span></span></a>
   </div>
 </li>
@@ -248,56 +248,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#part-0-review-and-foundations" id="toc-part-0-review-and-foundations" class="nav-link active" data-scroll-target="#part-0-review-and-foundations"><span class="header-section-number">B.1</span> Part 0: Review and Foundations</a>
-  <ul class="collapse">
-  <li><a href="#lecture-1-course-introduction-and-review-of-ml-basics" id="toc-lecture-1-course-introduction-and-review-of-ml-basics" class="nav-link" data-scroll-target="#lecture-1-course-introduction-and-review-of-ml-basics"><span class="header-section-number">B.1.1</span> Lecture 1: Course Introduction and Review of ML Basics</a></li>
-  <li><a href="#lecture-2-review-of-stochastic-gradient-descent" id="toc-lecture-2-review-of-stochastic-gradient-descent" class="nav-link" data-scroll-target="#lecture-2-review-of-stochastic-gradient-descent"><span class="header-section-number">B.1.2</span> Lecture 2: Review of (Stochastic) Gradient Descent</a></li>
-  <li><a href="#lecture-3-automatic-differentiation-and-taking-derivatives" id="toc-lecture-3-automatic-differentiation-and-taking-derivatives" class="nav-link" data-scroll-target="#lecture-3-automatic-differentiation-and-taking-derivatives"><span class="header-section-number">B.1.3</span> Lecture 3: Automatic Differentiation and Taking Derivatives</a></li>
-  <li><a href="#lecture-4-advanced-differentiation" id="toc-lecture-4-advanced-differentiation" class="nav-link" data-scroll-target="#lecture-4-advanced-differentiation"><span class="header-section-number">B.1.4</span> Lecture 4: Advanced Differentiation</a></li>
-  </ul></li>
-  <li><a href="#part-1-advanced-neural-network-models" id="toc-part-1-advanced-neural-network-models" class="nav-link" data-scroll-target="#part-1-advanced-neural-network-models"><span class="header-section-number">B.2</span> Part 1: Advanced Neural Network Models</a>
-  <ul class="collapse">
-  <li><a href="#lecture-5-review-of-neural-network-models" id="toc-lecture-5-review-of-neural-network-models" class="nav-link" data-scroll-target="#lecture-5-review-of-neural-network-models"><span class="header-section-number">B.2.1</span> Lecture 5: Review of Neural Network Models</a></li>
-  <li><a href="#lecture-6-push-forward-generative-models" id="toc-lecture-6-push-forward-generative-models" class="nav-link" data-scroll-target="#lecture-6-push-forward-generative-models"><span class="header-section-number">B.2.2</span> Lecture 6: Push-Forward Generative Models</a></li>
-  <li><a href="#lecture-7-interlude-techniques-for-building-and-debugging-ml-models" id="toc-lecture-7-interlude-techniques-for-building-and-debugging-ml-models" class="nav-link" data-scroll-target="#lecture-7-interlude-techniques-for-building-and-debugging-ml-models"><span class="header-section-number">B.2.3</span> Lecture 7: Interlude – Techniques for Building and Debugging ML Models</a></li>
-  <li><a href="#lecture-8-optimal-transport" id="toc-lecture-8-optimal-transport" class="nav-link" data-scroll-target="#lecture-8-optimal-transport"><span class="header-section-number">B.2.4</span> Lecture 8: Optimal Transport</a></li>
-  <li><a href="#lecture-9-stochastic-generative-models" id="toc-lecture-9-stochastic-generative-models" class="nav-link" data-scroll-target="#lecture-9-stochastic-generative-models"><span class="header-section-number">B.2.5</span> Lecture 9: Stochastic Generative Models</a></li>
-  <li><a href="#lecture-10-latent-generative-neural-models" id="toc-lecture-10-latent-generative-neural-models" class="nav-link" data-scroll-target="#lecture-10-latent-generative-neural-models"><span class="header-section-number">B.2.6</span> Lecture 10: Latent Generative Neural Models</a></li>
-  <li><a href="#lecture-11" id="toc-lecture-11" class="nav-link" data-scroll-target="#lecture-11"><span class="header-section-number">B.2.7</span> Lecture 11:</a></li>
-  <li><a href="#lecture-12-review-of-reinforcement-learning" id="toc-lecture-12-review-of-reinforcement-learning" class="nav-link" data-scroll-target="#lecture-12-review-of-reinforcement-learning"><span class="header-section-number">B.2.8</span> Lecture 12: Review of Reinforcement Learning</a></li>
-  <li><a href="#lecture-13-actor-critic-and-policy-gradient-methods" id="toc-lecture-13-actor-critic-and-policy-gradient-methods" class="nav-link" data-scroll-target="#lecture-13-actor-critic-and-policy-gradient-methods"><span class="header-section-number">B.2.9</span> Lecture 13: Actor-Critic and Policy Gradient Methods</a></li>
-  <li><a href="#lecture-14-advanced-policy-methods" id="toc-lecture-14-advanced-policy-methods" class="nav-link" data-scroll-target="#lecture-14-advanced-policy-methods"><span class="header-section-number">B.2.10</span> Lecture 14: Advanced Policy Methods</a></li>
-  <li><a href="#lecture-15-message-passing-graph-neural-networks-and-other-structured-data" id="toc-lecture-15-message-passing-graph-neural-networks-and-other-structured-data" class="nav-link" data-scroll-target="#lecture-15-message-passing-graph-neural-networks-and-other-structured-data"><span class="header-section-number">B.2.11</span> Lecture 15: Message Passing, Graph Neural Networks, and other Structured Data</a></li>
-  </ul></li>
-  <li><a href="#part-2-probabilistic-models-and-kernels" id="toc-part-2-probabilistic-models-and-kernels" class="nav-link" data-scroll-target="#part-2-probabilistic-models-and-kernels"><span class="header-section-number">B.3</span> Part 2: Probabilistic Models and Kernels</a>
-  <ul class="collapse">
-  <li><a href="#lecture-16-review-of-probabilistic-models" id="toc-lecture-16-review-of-probabilistic-models" class="nav-link" data-scroll-target="#lecture-16-review-of-probabilistic-models"><span class="header-section-number">B.3.1</span> Lecture 16: Review of Probabilistic Models</a></li>
-  <li><a href="#lecture-17-introduction-to-probablistic-programming" id="toc-lecture-17-introduction-to-probablistic-programming" class="nav-link" data-scroll-target="#lecture-17-introduction-to-probablistic-programming"><span class="header-section-number">B.3.2</span> Lecture 17: Introduction to Probablistic Programming</a></li>
-  <li><a href="#lecture-18-large-scale-bayesian-models-and-debugging-probabilistic-inference" id="toc-lecture-18-large-scale-bayesian-models-and-debugging-probabilistic-inference" class="nav-link" data-scroll-target="#lecture-18-large-scale-bayesian-models-and-debugging-probabilistic-inference"><span class="header-section-number">B.3.3</span> Lecture 18: Large-Scale Bayesian Models and Debugging Probabilistic Inference</a></li>
-  <li><a href="#lecture-19-kernel-basics" id="toc-lecture-19-kernel-basics" class="nav-link" data-scroll-target="#lecture-19-kernel-basics"><span class="header-section-number">B.3.4</span> Lecture 19: Kernel Basics</a></li>
-  <li><a href="#lecture-20-gaussian-processes-and-bayesian-optimization" id="toc-lecture-20-gaussian-processes-and-bayesian-optimization" class="nav-link" data-scroll-target="#lecture-20-gaussian-processes-and-bayesian-optimization"><span class="header-section-number">B.3.5</span> Lecture 20: Gaussian Processes and Bayesian Optimization</a></li>
-  </ul></li>
-  <li><a href="#part-3-engineering-relevant-machine-learning-topics" id="toc-part-3-engineering-relevant-machine-learning-topics" class="nav-link" data-scroll-target="#part-3-engineering-relevant-machine-learning-topics"><span class="header-section-number">B.4</span> Part 3: Engineering-relevant Machine Learning Topics</a>
-  <ul class="collapse">
-  <li><a href="#lecture-21-active-learning-and-semi-supervised-learning" id="toc-lecture-21-active-learning-and-semi-supervised-learning" class="nav-link" data-scroll-target="#lecture-21-active-learning-and-semi-supervised-learning"><span class="header-section-number">B.4.1</span> Lecture 21: Active Learning and Semi-Supervised Learning</a></li>
-  <li><a href="#lecture-22-transfer-learning-and-foundation-models" id="toc-lecture-22-transfer-learning-and-foundation-models" class="nav-link" data-scroll-target="#lecture-22-transfer-learning-and-foundation-models"><span class="header-section-number">B.4.2</span> Lecture 22: Transfer Learning and Foundation Models</a></li>
-  <li><a href="#lecture-23-integrating-everything-together" id="toc-lecture-23-integrating-everything-together" class="nav-link" data-scroll-target="#lecture-23-integrating-everything-together"><span class="header-section-number">B.4.3</span> Lecture 23: Integrating Everything Together</a></li>
-  <li><a href="#lecture-24-ethical-and-legal-implications-of-ml-within-engineering" id="toc-lecture-24-ethical-and-legal-implications-of-ml-within-engineering" class="nav-link" data-scroll-target="#lecture-24-ethical-and-legal-implications-of-ml-within-engineering"><span class="header-section-number">B.4.4</span> Lecture 24: Ethical and Legal Implications of ML within Engineering</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/helpful_tooling.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendices/course_progression.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Course Lecture Progression</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appendix B — Course Lecture Progression</h1>
+<h1 class="title">Model-Specific Approaches</h1>
 </div>
 
 
@@ -314,209 +273,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section describes an example progression through the course material based on my “Machine Learning for Mechanical Engineering” course at ETHZ. It assumes two lecture+exercise sessions twice a week, for a duration of 1 hour and 45 minutes each with a 5-10 minutes break in the middle of each session. This provides a sample of how you might work through the content in this book, and also acts as a reference to the students. My course is structured such that lectures and exercises occur in the same session, often alternating between lecture and in-class demonstrations or exercises, and this is frequently reflected in each of the book chapters. In class, for time reasons, I may skip some of the longer derivations in the book, since these can be effectively studied on their own.</p>
-<section id="part-0-review-and-foundations" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="part-0-review-and-foundations"><span class="header-section-number">B.1</span> Part 0: Review and Foundations</h2>
-<p>These lectures introduce the course and also cover some background information that will be foundational and critical later in the course. For illustrative and notational purposes, we will use Linear Regression as a simple model to understand these foundations first, and this will allow us to build up to more complex models as we go through the course.</p>
-<section id="lecture-1-course-introduction-and-review-of-ml-basics" class="level3" data-number="B.1.1">
-<h3 data-number="B.1.1" class="anchored" data-anchor-id="lecture-1-course-introduction-and-review-of-ml-basics"><span class="header-section-number">B.1.1</span> Lecture 1: Course Introduction and Review of ML Basics</h3>
+<p>These chapters look more like a “traditional” textbook, in the sense that they cover individual techniques or concepts that I thought were maximally relevant to Mechanical Engineers at the time that I wrote the book. These chapters will be most immediately useful in terms of getting up to speed with specific types of models, but they are also the most likely to become out of date quickly as newer/better models are invented.</p>
 <ul>
-<li>Overview the course structure and syllabus</li>
-<li>Review several basics that should have been covered in the prior Stochastics and Machine Learning course
+<li>Review of Prior Course Models – CNNs, UNets, RNNs, AEs</li>
+<li>Advanced Neural Models
 <ul>
-<li>Visualizing Data Review using the <a href="../notebooks/california_housing_visualization.html">California Housing Dataset Notebook</a></li>
-<li>Review of Cross Validation in <a href="../part1/evaluating_models.qmd">Evaluating ML Models</a></li>
-<li><a href="../part2/review_linear_models.qmd">Review of Linear models</a></li>
+<li>The Attention Mechanism</li>
+<li>Introduction to Transformers</li>
+<li>Regularization of Neural Networks</li>
+<li>Introduction to Geometric Deep Learning (Message Passing, GNNs, Working with Meshes)</li>
+<li>Failure Mechanisms in Neural Models</li>
 </ul></li>
-<li>(Re-)Introduction to Coding and Tooling basics to help with the rest of the course, such as Editors, Colab, Version Control, Basic Debugging. Read <a href="../appendices/helpful_tooling.html">Helpful Tooling</a>.</li>
-</ul>
-</section>
-<section id="lecture-2-review-of-stochastic-gradient-descent" class="level3" data-number="B.1.2">
-<h3 data-number="B.1.2" class="anchored" data-anchor-id="lecture-2-review-of-stochastic-gradient-descent"><span class="header-section-number">B.1.2</span> Lecture 2: Review of (Stochastic) Gradient Descent</h3>
+<li>Probabilistic Models and Kernels
 <ul>
-<li>Read <a href="../part1/gradient_descent.qmd">Stochastic Gradient Descent</a></li>
-<li>Read <a href="https://distill.pub/2017/momentum/">Why Momentum Really Works</a></li>
-<li>Review of Regularization for Linear Regresson models, including weight decay (L2) and L1/sparsity control, and effects on loss functions.</li>
-<li>Review of Linear Unsupervised Learning (e.g., PCA, Sparse PCA, etc.)</li>
-</ul>
-</section>
-<section id="lecture-3-automatic-differentiation-and-taking-derivatives" class="level3" data-number="B.1.3">
-<h3 data-number="B.1.3" class="anchored" data-anchor-id="lecture-3-automatic-differentiation-and-taking-derivatives"><span class="header-section-number">B.1.3</span> Lecture 3: Automatic Differentiation and Taking Derivatives</h3>
+<li>Introduction to Probabilistic Graphical Models</li>
+<li>Exact Inference (MLE, MAP, EM)</li>
+<li>Approximate Inference (MCMC, VI)</li>
+<li>Introduction to Probabilistic Programming</li>
+<li>Failure Mechanisms in Probabilistic Models</li>
+</ul></li>
+<li>Ensembles (Not included in current course for scope reasons)
 <ul>
-<li>Read <a href="../part1/taking_derivatives.qmd">Taking Derivatives</a>, except for Advanced topics like Implicit Differentiation and JVP/HVP (this is for a later lecture)</li>
-<li>In-Class example of Forward and Reverse AD on a simple function</li>
-<li>In-Class example of AD through a Verlet Integrator</li>
-</ul>
-</section>
-<section id="lecture-4-advanced-differentiation" class="level3" data-number="B.1.4">
-<h3 data-number="B.1.4" class="anchored" data-anchor-id="lecture-4-advanced-differentiation"><span class="header-section-number">B.1.4</span> Lecture 4: Advanced Differentiation</h3>
-<ul>
-<li>Read the remaining parts of <a href="../part1/taking_derivatives.qmd">Taking Derivatives</a></li>
-<li>In-Class example of Implicit Differentiation</li>
-<li>In-Class example with JVPs for computing some example properties of Linear Models, for example, the Fisher Information Matrix.</li>
-<li>(Time Permitting) Examples of Projected Gradient or Proximal Gradient methods.</li>
-</ul>
-</section>
-</section>
-<section id="part-1-advanced-neural-network-models" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="part-1-advanced-neural-network-models"><span class="header-section-number">B.2</span> Part 1: Advanced Neural Network Models</h2>
-<section id="lecture-5-review-of-neural-network-models" class="level3" data-number="B.2.1">
-<h3 data-number="B.2.1" class="anchored" data-anchor-id="lecture-5-review-of-neural-network-models"><span class="header-section-number">B.2.1</span> Lecture 5: Review of Neural Network Models</h3>
-<ul>
-<li>Read <a href="../part2/review_NNs.qmd">Review of Neural Networks</a></li>
-<li>In-Class example of Visualizing NN Layers using <a href="https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html">ConvNetJS</a></li>
-<li>In-Class examples of Auto-Encoders on Simple Data, Auto-Encoders on Airfoil Data, and Least Volume Auto-Encoders (including Spectral Normalization)</li>
-</ul>
-</section>
-<section id="lecture-6-push-forward-generative-models" class="level3" data-number="B.2.2">
-<h3 data-number="B.2.2" class="anchored" data-anchor-id="lecture-6-push-forward-generative-models"><span class="header-section-number">B.2.2</span> Lecture 6: Push-Forward Generative Models</h3>
-<ul>
-<li>Read <a href="../part2/generative_models_pushforward.qmd">Push-Forward Generative Models</a></li>
-<li>In-Class examples of GANs, VAEs, and Normalizing Flows on Synthetic Data and the Airfoil Problem</li>
-</ul>
-</section>
-<section id="lecture-7-interlude-techniques-for-building-and-debugging-ml-models" class="level3" data-number="B.2.3">
-<h3 data-number="B.2.3" class="anchored" data-anchor-id="lecture-7-interlude-techniques-for-building-and-debugging-ml-models"><span class="header-section-number">B.2.3</span> Lecture 7: Interlude – Techniques for Building and Debugging ML Models</h3>
-<ul>
-<li>Read <a href="../appendices/helpful_tooling.html">Helpful Tooling for Working with and Debugging Machine Learning Models</a></li>
-<li>In-Class Before and After example implementing the changes</li>
-<li>In-Class example of improving/correcting an LLM-provided code solution</li>
-</ul>
-</section>
-<section id="lecture-8-optimal-transport" class="level3" data-number="B.2.4">
-<h3 data-number="B.2.4" class="anchored" data-anchor-id="lecture-8-optimal-transport"><span class="header-section-number">B.2.4</span> Lecture 8: Optimal Transport</h3>
-<ul>
-<li>Read <a href="../part1/measuring_distributions.qmd">Measuring Differences Between Distributions</a></li>
-<li>In-Class example of an Optimal Transport Generative Model</li>
-</ul>
-</section>
-<section id="lecture-9-stochastic-generative-models" class="level3" data-number="B.2.5">
-<h3 data-number="B.2.5" class="anchored" data-anchor-id="lecture-9-stochastic-generative-models"><span class="header-section-number">B.2.5</span> Lecture 9: Stochastic Generative Models</h3>
-<ul>
-<li>Read <a href="../part2/generative_models_stochastic.qmd">Stochastic Generative Models</a></li>
-<li>In-Class examples of Diffusion Models on Synthetic Data and the Airfoil Problem</li>
-<li>In-Class examples of Sequence Data generation (e.g., the Tangrams Example)</li>
-</ul>
-</section>
-<section id="lecture-10-latent-generative-neural-models" class="level3" data-number="B.2.6">
-<h3 data-number="B.2.6" class="anchored" data-anchor-id="lecture-10-latent-generative-neural-models"><span class="header-section-number">B.2.6</span> Lecture 10: Latent Generative Neural Models</h3>
-<ul>
-<li>In-Class example of Latent Diffusion Models via Least Volume AEs.</li>
-<li>In-Class example of continuous+discrete models</li>
-<li>Practical Demonstrations of complex models on EngiBench</li>
-</ul>
-</section>
-<section id="lecture-11" class="level3" data-number="B.2.7">
-<h3 data-number="B.2.7" class="anchored" data-anchor-id="lecture-11"><span class="header-section-number">B.2.7</span> Lecture 11:</h3>
-<ul>
-<li>Read <a href="../part2/transformers.qmd">Introduction to Transformers</a></li>
-<li>In-Class experiment with the Attention Mechanism</li>
-<li>In-Class demonstrations of Latent Transformer models (e.g., VQGAN)</li>
-</ul>
-</section>
-<section id="lecture-12-review-of-reinforcement-learning" class="level3" data-number="B.2.8">
-<h3 data-number="B.2.8" class="anchored" data-anchor-id="lecture-12-review-of-reinforcement-learning"><span class="header-section-number">B.2.8</span> Lecture 12: Review of Reinforcement Learning</h3>
-<ul>
-<li>Read <a href="../part2/reinforcement_learning.qmd">Reinforcement Learning</a></li>
-<li>In-Class example of Linear Functional Q-Learning</li>
-</ul>
-</section>
-<section id="lecture-13-actor-critic-and-policy-gradient-methods" class="level3" data-number="B.2.9">
-<h3 data-number="B.2.9" class="anchored" data-anchor-id="lecture-13-actor-critic-and-policy-gradient-methods"><span class="header-section-number">B.2.9</span> Lecture 13: Actor-Critic and Policy Gradient Methods</h3>
-<ul>
-<li>Policy Gradients</li>
-</ul>
-</section>
-<section id="lecture-14-advanced-policy-methods" class="level3" data-number="B.2.10">
-<h3 data-number="B.2.10" class="anchored" data-anchor-id="lecture-14-advanced-policy-methods"><span class="header-section-number">B.2.10</span> Lecture 14: Advanced Policy Methods</h3>
-<ul>
-<li>Diffusion Policies</li>
-<li>Transformer Policies</li>
-<li>Latent Generative Policies (e.g., Dreamer and variants)</li>
-</ul>
-</section>
-<section id="lecture-15-message-passing-graph-neural-networks-and-other-structured-data" class="level3" data-number="B.2.11">
-<h3 data-number="B.2.11" class="anchored" data-anchor-id="lecture-15-message-passing-graph-neural-networks-and-other-structured-data"><span class="header-section-number">B.2.11</span> Lecture 15: Message Passing, Graph Neural Networks, and other Structured Data</h3>
-<ul>
-<li>Read <a href="../part2/graph_neural_networks.qmd">Graph Neural Networks</a></li>
-<li>Learning with Meshes and Point Clouds</li>
-<li>Learning with Signed Distance Fields</li>
-</ul>
-</section>
-</section>
-<section id="part-2-probabilistic-models-and-kernels" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="part-2-probabilistic-models-and-kernels"><span class="header-section-number">B.3</span> Part 2: Probabilistic Models and Kernels</h2>
-<section id="lecture-16-review-of-probabilistic-models" class="level3" data-number="B.3.1">
-<h3 data-number="B.3.1" class="anchored" data-anchor-id="lecture-16-review-of-probabilistic-models"><span class="header-section-number">B.3.1</span> Lecture 16: Review of Probabilistic Models</h3>
-<ul>
-<li>Read <span class="quarto-unresolved-ref">?sec-reviewprobability</span> of <a href="../part2/probabilistic_models.qmd">Probabilistic Models</a>, since this reviews the information from the prior course. We will revisit the later sections in a later lecture.</li>
-<li>In-Class exercise deriving the MLE for various common distributions</li>
-</ul>
-</section>
-<section id="lecture-17-introduction-to-probablistic-programming" class="level3" data-number="B.3.2">
-<h3 data-number="B.3.2" class="anchored" data-anchor-id="lecture-17-introduction-to-probablistic-programming"><span class="header-section-number">B.3.2</span> Lecture 17: Introduction to Probablistic Programming</h3>
-<ul>
-<li>Bayesian Linear Regression in a Probabilistic Programming Language</li>
-<li>Introduction to Approximate Inference Methods, such as MCMC and Variational Inference</li>
-</ul>
-</section>
-<section id="lecture-18-large-scale-bayesian-models-and-debugging-probabilistic-inference" class="level3" data-number="B.3.3">
-<h3 data-number="B.3.3" class="anchored" data-anchor-id="lecture-18-large-scale-bayesian-models-and-debugging-probabilistic-inference"><span class="header-section-number">B.3.3</span> Lecture 18: Large-Scale Bayesian Models and Debugging Probabilistic Inference</h3>
-<ul>
-<li>Stochastic Variational Inference and Stein Variational Gradient Descent</li>
-<li>Pitfalls of Probabilistic Models and Debugging Inference</li>
-</ul>
-</section>
-<section id="lecture-19-kernel-basics" class="level3" data-number="B.3.4">
-<h3 data-number="B.3.4" class="anchored" data-anchor-id="lecture-19-kernel-basics"><span class="header-section-number">B.3.4</span> Lecture 19: Kernel Basics</h3>
-<ul>
-<li>Representer Theorem</li>
-<li>Kernelized Ridge Regression</li>
-<li>Regularization of Kernels and effects of Fourier Spectra</li>
-</ul>
-</section>
-<section id="lecture-20-gaussian-processes-and-bayesian-optimization" class="level3" data-number="B.3.5">
-<h3 data-number="B.3.5" class="anchored" data-anchor-id="lecture-20-gaussian-processes-and-bayesian-optimization"><span class="header-section-number">B.3.5</span> Lecture 20: Gaussian Processes and Bayesian Optimization</h3>
-<ul>
-<li>Basics of Gaussian Processes</li>
-<li>Bayesian Optimization</li>
-<li>Effect of Dimension on GPs and related variants (AdditiveGPs, etc.)</li>
-</ul>
-</section>
-</section>
-<section id="part-3-engineering-relevant-machine-learning-topics" class="level2" data-number="B.4">
-<h2 data-number="B.4" class="anchored" data-anchor-id="part-3-engineering-relevant-machine-learning-topics"><span class="header-section-number">B.4</span> Part 3: Engineering-relevant Machine Learning Topics</h2>
-<section id="lecture-21-active-learning-and-semi-supervised-learning" class="level3" data-number="B.4.1">
-<h3 data-number="B.4.1" class="anchored" data-anchor-id="lecture-21-active-learning-and-semi-supervised-learning"><span class="header-section-number">B.4.1</span> Lecture 21: Active Learning and Semi-Supervised Learning</h3>
-<ul>
-<li>Notebook on Active Learning and Semi-Supervised Learning</li>
-</ul>
-</section>
-<section id="lecture-22-transfer-learning-and-foundation-models" class="level3" data-number="B.4.2">
-<h3 data-number="B.4.2" class="anchored" data-anchor-id="lecture-22-transfer-learning-and-foundation-models"><span class="header-section-number">B.4.2</span> Lecture 22: Transfer Learning and Foundation Models</h3>
-<ul>
-<li>Fine-Tuning a Pre-trained model</li>
-<li>Jointly embedded models</li>
-</ul>
-</section>
-<section id="lecture-23-integrating-everything-together" class="level3" data-number="B.4.3">
-<h3 data-number="B.4.3" class="anchored" data-anchor-id="lecture-23-integrating-everything-together"><span class="header-section-number">B.4.3</span> Lecture 23: Integrating Everything Together</h3>
-<ul>
-<li>In-Class exercise integrating all prior topics using EngiBench/EngiOpt</li>
-</ul>
-</section>
-<section id="lecture-24-ethical-and-legal-implications-of-ml-within-engineering" class="level3" data-number="B.4.4">
-<h3 data-number="B.4.4" class="anchored" data-anchor-id="lecture-24-ethical-and-legal-implications-of-ml-within-engineering"><span class="header-section-number">B.4.4</span> Lecture 24: Ethical and Legal Implications of ML within Engineering</h3>
-<ul>
-<li>Adversarial Attacks and Defenses</li>
-<li>Privacy-Preserving and Federated ML</li>
-<li>Interpretability Methods</li>
-<li>Case Study: National Algorithms Safety Board</li>
+<li>Bagging</li>
+<li>Boosting</li>
+</ul></li>
 </ul>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -921,13 +704,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../appendices/helpful_tooling.html" class="pagination-link" aria-label="Helpful Tooling for Working with and Debugging Machine Learning Models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Helpful Tooling for Working with and Debugging Machine Learning Models</span></span>
+      <a href="../part1/taking_derivatives.html" class="pagination-link" aria-label="Taking Derivatives with Automatic Differentiation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Taking Derivatives with Automatic Differentiation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../appendices/review_of_singular_value_decomposition.html" class="pagination-link" aria-label="Review of Matrices and the Singular Value Decomposition">
-        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Review of Matrices and the Singular Value Decomposition</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../part2/review_neural_networks.html" class="pagination-link" aria-label="Review of Neural Networks">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Review of Neural Networks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
