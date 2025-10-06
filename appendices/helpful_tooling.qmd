@@ -432,7 +432,7 @@ with torch.no_grad():
     predictions = model(X_tensor)
 
 plt.figure(figsize=(8, 5))
-plt.scatter(X_tensor.numpy(), y_tensor.numpy(), label="True data", alpha=0.5)
+plt.scatter(X_tensor.numpy(), y_tensor.numpy(), label="True data", color="blue", alpha=0.5)
 plt.scatter(
     X_tensor.numpy(), predictions.numpy(), label="Predictions", color="red", alpha=0.5
 )
@@ -538,6 +538,7 @@ def visualize_data(
     model: nn.Module,
     X_test: np.ndarray,
     y_test: np.ndarray,
+    epoch: int,
     open_window: bool = False,
     log: bool = False,
 ):
@@ -547,6 +548,7 @@ def visualize_data(
         model: The model to visualize the predictions of.
         X_test: The test data.
         y_test: The test labels.
+        epoch: The epoch number.
         open_window: Whether to open a window to display the plot.
         log: Whether to log the plot to wandb.
     """
@@ -558,13 +560,14 @@ def visualize_data(
     )
     plt.xlabel("X")
     plt.ylabel("y")
-    plt.title("Data")
+    plt.title(f"Data - Epoch {epoch}")
     plt.legend()
+    if log:
+        plt.savefig("predictions.png")
+        wandb.log({"predictions": wandb.Image("predictions.png")})
     if open_window:
         plt.show()
-    if log:
-        wandb.log({"predictions": wandb.Image("predictions.png")})
-        plt.close()
+    plt.close()
 
 
 if __name__ == "__main__":
@@ -576,6 +579,14 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = train_test_split(
         X_all, y_all, test_size=0.2, random_state=42
     )
+
+    plt.scatter(X_train, y_train, label="Train")
+    plt.scatter(X_test, y_test, color="red", label="Test")
+    plt.xlabel("X")
+    plt.ylabel("y")
+    plt.title("Data")
+    plt.legend()
+    plt.show()
 
     # Normalize the data
     X_mean = X_train.mean(axis=0, keepdims=True)
@@ -618,7 +629,14 @@ if __name__ == "__main__":
         wandb.log({"loss": loss.item()})
         losses.append(loss.item())
         if epoch % 20 == 0:
-            visualize_data(model, X_test_norm, y_test_norm, open_window=False, log=True)
+            visualize_data(
+                model,
+                X_test_norm,
+                y_test_norm,
+                epoch=epoch,
+                open_window=False,
+                log=True,
+            )
 
     plt.plot(losses)
     plt.xlabel("Epoch")
@@ -627,6 +645,8 @@ if __name__ == "__main__":
     plt.show()
 
     # Show predictions plot at the end of training
-    visualize_data(model, X_test_norm, y_test_norm, open_window=True, log=True)
+    visualize_data(
+        model, X_test_norm, y_test_norm, epoch=500, open_window=True, log=True
+    )
     wandb.finish()
 ```
