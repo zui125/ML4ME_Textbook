@@ -11,16 +11,19 @@ book:
   #downloads: [pdf]
   chapters:
     - index.qmd
-    - intro.qmd
+    #- intro.qmd
     - part: part1/part1.qmd
       chapters:
-        - part1/evaluating_models.qmd
+        - part1/reviewing_supervised_linear_models.ipynb
+        - notebooks/cross_validation_linear_regression.ipynb
         #- part1/gradient_descent.qmd
         - notebooks/supervised_linear_models.ipynb
-        - part1/taking_derivatives.qmd
+        - part1/linear_decompositions.ipynb
+        - part1/taking_derivatives.ipynb
         #- part1/measuring_distributions.qmd
-    #- part: part2/part2.qmd
-    #  chapters: 
+    - part: part2/part2.qmd
+      chapters:
+        - part2/review_neural_networks.ipynb 
         #- part2/review_linear_models.qmd
         #- part2/review_NNs.qmd
         #- part2/regularization_NNs.qmd
@@ -43,13 +46,12 @@ book:
       number-sections: false
       chapters:
         - notebooks/california_housing_visualization.ipynb
-        - notebooks/supervised_linear_models.ipynb
-        - notebooks/pytorch_autograd_verlet_integrator.ipynb
     
   appendices:
     - appendices/helpful_tooling.qmd
     #- appendices/data_preparation.qmd
     - appendices/course_progression.qmd
+    - appendices/review_of_singular_value_decomposition.ipynb
 
 bibliography: references.bib
 
@@ -58,6 +60,10 @@ format:
     theme:
       - cosmo
       - brand
+    reference-location: margin
+    citation-location: margin
+    footnote-location: margin
+    notebook-links: true
   #pdf:
   #  documentclass: scrreprt
 format-links: [ipynb]
