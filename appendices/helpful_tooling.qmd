@@ -293,19 +293,17 @@ We start with some messy code that Ruff would flag:
 import numpy as np, torch, torch.nn as nn, torch.optim as optim, matplotlib.pyplot as plt, random
 from sklearn.model_selection import train_test_split
 
-X_all = np.linspace(0, 100, 500).reshape(-1, 1)
-y_all = 5 * np.sin(0.1 * X_all) + np.random.randn(500, 1)
-X_train, X_test, y_train, y_test = train_test_split(
-    X_all, y_all, test_size=0.2, random_state=42
-)
+X_all =np.linspace(0, 100, 500).reshape(-1, 1)
+y_all = 5* np.sin(0.1 * X_all)+np.random.randn(500, 1)
+X_train,X_test,y_train,y_test =train_test_split(X_all,y_all,test_size=0.2,random_state=42)
 
 model = nn.Linear(1,1)
-optimizer = optim.SGD(model.parameters(), lr=0.01)
-loss_fn = nn.MSELoss()
+optimizer =optim.SGD(model.parameters(), lr=0.01)
+loss_fn= nn.MSELoss()
 
 for epoch in range(500):
-    pred = model(torch.tensor(X_train))
-    loss = loss_fn(pred, torch.tensor(y_train))
+    pred =model(torch.tensor(X_train))
+    loss= loss_fn(pred, torch.tensor(y_train))
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
