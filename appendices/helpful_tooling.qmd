@@ -293,12 +293,12 @@ We start with some messy code that Ruff would flag:
 import numpy as np, torch, torch.nn as nn, torch.optim as optim, matplotlib.pyplot as plt, random
 from sklearn.model_selection import train_test_split
 
-X_all =np.linspace(0, 100, 500).reshape(-1, 1)
-y_all = 5* np.sin(0.1 * X_all)+np.random.randn(500, 1)
+X_all =np.linspace(0, 100, 500).reshape(-1,1)
+y_all = 5* np.sin(0.1 * X_all)+np.random.randn(500,1)
 X_train,X_test,y_train,y_test =train_test_split(X_all,y_all,test_size=0.2,random_state=42)
 
-model = nn.Linear(1,1)
-optimizer =optim.SGD(model.parameters(), lr=0.01)
+model =nn.Linear(1,1)
+optimizer =optim.SGD(model.parameters(),lr=0.01)
 loss_fn= nn.MSELoss()
 
 for epoch in range(500):
@@ -327,8 +327,8 @@ Running python train.py gives a cryptic type error at the loss computation:
 The problem is that the model outputs `float32` predictions while y is `float64`. This causes a mismatch in the loss computation. The fix is to change the lines to:
 
 ```diff
-- pred = model(torch.tensor(X))
-- loss = loss_fn(pred, torch.tensor(y))
+- pred = model(torch.tensor(X_train))
+- loss = loss_fn(pred, torch.tensor(y_train))
 + pred = model(torch.tensor(X_train, dtype=torch.float32))
 + loss = loss_fn(pred, torch.tensor(y_train, dtype=torch.float32))
 ```
@@ -410,7 +410,7 @@ y_test_norm = (y_test - y_mean) / y_std
 or using scikit-learn utils:
 
 ```py
- x_scaler = StandardScaler()
+x_scaler = StandardScaler()
 y_scaler = StandardScaler()
 X_train_norm = x_scaler.fit_transform(X_train)
 y_train_norm = y_scaler.fit_transform(y_train)
