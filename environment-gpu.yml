@@ -4,6 +4,8 @@ channels:
 dependencies:
   - python=3.11.8
   - pip
+  - pip:
+      - geomloss>=0.2.6
   
   # CUDA and cuDNN for GPU support
   - conda-forge::cuda=12.8

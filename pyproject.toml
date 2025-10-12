@@ -16,6 +16,8 @@ dependencies = [
     "scikit-learn>=1.4.2",
     "pandas>=2.2.2",
     "scipy>=1.13.1",
+    "geomloss>=0.2.6",
+    "engibench>=0.0.1",
     
     # Jupyter and Interactive Computing
     "jupyter>=1.0.0",

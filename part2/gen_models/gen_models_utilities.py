@@ -81,6 +81,12 @@ class GanHistory:
     diversity: List[float]
     real_scores: List[float]
     fake_scores: List[float]
+    # snapshots will store checkpoint information captured during training
+    snapshots: Optional[List[Dict]] = None
+
+    def __post_init__(self) -> None:
+        if self.snapshots is None:
+            self.snapshots = []
 
     def append_epoch(self, metrics: Dict[str, float]) -> None:
         for key, value in metrics.items():
@@ -116,6 +122,8 @@ def plot_model_diagnostics(
     ax.set_title(f"Training Losses {title_suffix}")
     ax.set_ylabel("Loss")
     ax.set_xlabel("Epoch")
+    # Set the axis to log scale
+    ax.set_yscale("log")
     ax.legend()
     ax.grid(True, alpha=0.3)
     ax = axes[0, 1]
