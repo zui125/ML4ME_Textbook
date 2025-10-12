@@ -24,6 +24,7 @@ book:
     - part: part2/part2.qmd
       chapters:
         - part2/review_neural_networks.ipynb 
+        - part2/gen_models/intro_to_GANS.ipynb
         #- part2/review_linear_models.qmd
         #- part2/review_NNs.qmd
         #- part2/regularization_NNs.qmd
