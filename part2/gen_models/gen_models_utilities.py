@@ -14,10 +14,15 @@ sns.set_context("talk")
 RNG_SEED = 42
 np.random.seed(RNG_SEED)
 torch.manual_seed(RNG_SEED)
-if torch.cuda.is_available():
-    torch.cuda.manual_seed_all(RNG_SEED)
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Set device priority: CUDA > MPS > CPU
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    torch.cuda.manual_seed_all(RNG_SEED)
+elif torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device("cpu")
 
 
 def _compute_axis_limits(
