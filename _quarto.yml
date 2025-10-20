@@ -20,10 +20,14 @@ book:
         - notebooks/supervised_linear_models.ipynb
         - part1/linear_decompositions.ipynb
         - part1/taking_derivatives.ipynb
+        - part1/distribution_distance.ipynb
         #- part1/measuring_distributions.qmd
     - part: part2/part2.qmd
       chapters:
         - part2/review_neural_networks.ipynb 
+        - part2/gen_models/intro_to_GANS.ipynb
+        - part2/gen_models/GAN_pitfalls.ipynb
+        - part2/gen_models/OT.ipynb
         #- part2/review_linear_models.qmd
         #- part2/review_NNs.qmd
         #- part2/regularization_NNs.qmd
