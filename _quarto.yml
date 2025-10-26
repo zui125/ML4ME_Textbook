@@ -57,6 +57,7 @@ book:
     #- appendices/data_preparation.qmd
     - appendices/course_progression.qmd
     - appendices/review_of_singular_value_decomposition.ipynb
+    - appendices/review_of_math_and_computing_foundations.ipynb
 
 bibliography: references.bib
 
