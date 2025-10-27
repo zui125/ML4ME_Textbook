@@ -233,3 +233,6 @@ tmp/
 
 # GitHub
 .github/*.md
+
+#Ordner
+tz/
