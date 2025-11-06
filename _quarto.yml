@@ -29,6 +29,9 @@ book:
         - part2/gen_models/intro_to_GANS.ipynb
         - part2/gen_models/GAN_pitfalls.ipynb
         - part2/gen_models/OT.ipynb
+        - part2/gen_models/VAEs.ipynb
+        - part2/gen_models/normalizing_flows.ipynb
+        - part2/gen_models/continuous_flows.ipynb
         #- part2/review_linear_models.qmd
         #- part2/review_NNs.qmd
         #- part2/regularization_NNs.qmd
@@ -47,6 +50,7 @@ book:
     - part: problems/problems.qmd
       chapters: 
         - problems/ps1.qmd
+        - problems/ps2.qmd
     - part: notebooks/notebooks.qmd
       number-sections: false
       chapters:
