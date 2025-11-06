@@ -50,6 +50,7 @@ book:
     - part: problems/problems.qmd
       chapters: 
         - problems/ps1.qmd
+        - problems/ps2.qmd
     - part: notebooks/notebooks.qmd
       number-sections: false
       chapters:
